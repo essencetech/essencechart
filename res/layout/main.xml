@@ -1,0 +1,844 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background00"
+    tools:context=".EssenceChartActivity" >
+
+    <com.essence.chart.Chart
+        android:id="@+id/chart01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:id="@+id/scrollview_chart_adjustment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_chart_adjustment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:background="#00000000" >
+
+            <TextView
+                android:id="@+id/text_chart_type"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignBottom="@+id/button_chart_type"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_type"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/button_chart_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/seekbar_chart_size"
+                android:layout_toRightOf="@+id/text_chart_type"
+                android:minHeight="30dip"
+                android:text="@string/chart_type" />
+
+            <TextView
+                android:id="@+id/text_chart_style"
+                android:layout_width="90dip"
+                android:layout_height="35dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/button_chart_type"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_style"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/button_chart_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/seekbar_chart_size"
+                android:layout_alignTop="@+id/text_chart_style"
+                android:layout_toRightOf="@+id/text_chart_style"
+                android:minHeight="30dip"
+                android:text="@string/chart_style" />
+
+            <TextView
+                android:id="@+id/text_chart_size"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/button_chart_style"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="35dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_size"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <SeekBar
+                android:id="@+id/seekbar_chart_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_chart_size"
+                android:layout_marginRight="15dip"
+                android:layout_toRightOf="@+id/text_chart_size" />
+
+            <TextView
+                android:id="@+id/text_chart_rotate_x"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/seekbar_chart_size"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_rotate_x"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <SeekBar
+                android:id="@+id/seekbar_chart_rotate_x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_chart_rotate_x"
+                android:layout_marginRight="15dip"
+                android:layout_toRightOf="@+id/text_chart_rotate_x" />
+
+            <TextView
+                android:id="@+id/text_chart_rotate_y"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/text_chart_rotate_x"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_rotate_y"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <SeekBar
+                android:id="@+id/seekbar_chart_rotate_y"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_chart_rotate_y"
+                android:layout_marginRight="15dip"
+                android:layout_toRightOf="@+id/text_chart_rotate_y" />
+
+            <TextView
+                android:id="@+id/text_chart_rotate_z"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/seekbar_chart_rotate_y"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_rotate_z"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <SeekBar
+                android:id="@+id/seekbar_chart_rotate_z"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_chart_rotate_z"
+                android:layout_marginRight="15dip"
+                android:layout_toRightOf="@+id/text_chart_rotate_z" />
+
+            <TextView
+                android:id="@+id/text_chart_alpha"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/seekbar_chart_rotate_z"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_alpha"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <SeekBar
+                android:id="@+id/seekbar_chart_alpha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_chart_alpha"
+                android:layout_marginRight="15dip"
+                android:layout_toRightOf="@+id/text_chart_alpha" />
+
+            <TextView
+                android:id="@+id/text_chart_legend"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/seekbar_chart_alpha"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_legend"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <CheckBox
+                android:id="@+id/checkbox_chart_legend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_chart_legend"
+                android:layout_toRightOf="@+id/text_chart_legend"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/text_chart_animation"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/checkbox_chart_legend"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_animation"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <CheckBox
+                android:id="@+id/checkbox_chart_animation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_chart_animation"
+                android:layout_toRightOf="@+id/text_chart_animation"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/text_chart_animation_loop"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/checkbox_chart_animation"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_animation_loop"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <CheckBox
+                android:id="@+id/checkbox_chart_animation_loop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_chart_animation_loop"
+                android:layout_toRightOf="@+id/text_chart_animation_loop"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            
+            <TextView
+                android:id="@+id/text_chart_data_queue"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/checkbox_chart_animation_loop"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/chart_data_queue"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <CheckBox
+                android:id="@+id/checkbox_chart_data_queue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_chart_data_queue"
+                android:layout_toRightOf="@+id/text_chart_data_queue"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/text_chart_dummy01"
+                android:layout_width="90dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/checkbox_chart_data_queue"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_chart_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/scrollview_chart_adjustment"
+        android:layout_marginRight="0dip"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/background00" >
+
+            <RadioGroup
+                android:id="@+id/radio_chart_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:checkedButton="@+id/chart_type_bar"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_chart_type_class01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/chart_type_class01"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class01_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class01_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class01_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class01_sub02" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class01_sub03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class01_sub03" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class01_sub04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class01_sub04" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class01_sub05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class01_sub05" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class01_sub06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class01_sub06" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class02"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class02_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class02_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class02_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class02_sub02" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class02_sub03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class02_sub03" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class02_sub04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class02_sub04" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class03"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class03_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class03_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class03_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class03_sub02" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class03_sub03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class03_sub03" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class03_sub04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class03_sub04" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class04"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class04_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class04_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class04_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class04_sub02" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class04_sub03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class04_sub03" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class04_sub04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class04_sub04" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class04_sub05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class04_sub05" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class04_sub06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class04_sub06" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class05"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class05_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class05_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class05_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class05_sub02" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class05_sub03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class05_sub03" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class05_sub04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class05_sub04" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class06"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class06_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class06_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class06_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class06_sub02" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class06_sub03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class06_sub03" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class07"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class07"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class07_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class07_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class07_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class07_sub02" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class08"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class08"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class08_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class08_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class08_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class08_sub02" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class09"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class09"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class09_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class09_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class09_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class09_sub02" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class10"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class10_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class10_sub01" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class11"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class11_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class11_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class11_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class11_sub02" />
+
+                <TextView
+                    android:id="@+id/text_chart_type_class12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chart_type_class12"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class12_sub01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class12_sub01" />
+
+                <RadioButton
+                    android:id="@+id/chart_type_class12_sub02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_type_class12_sub02" />
+            </RadioGroup>
+        </ScrollView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_chart_color_template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/scrollview_chart_adjustment"
+        android:layout_marginRight="0dip"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/background00" >
+
+            <RadioGroup
+                android:id="@+id/radio_chart_color_template"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="20dip"
+                android:checkedButton="@+id/chart_color_template_00"
+                android:orientation="vertical" >
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_00" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_01" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_02" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_03" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_04" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_05" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_06" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_07"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_07" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_08"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_08" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_09"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_09" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_10" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_11" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_12" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_13" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_14" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_15" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_16" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_17" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_18" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_19" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_20" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_21" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_22" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_23" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_24" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_25" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_26" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_27" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_28" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_29" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_30" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_31" />
+
+                <RadioButton
+                    android:id="@+id/chart_color_template_32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_color_template_32" />
+            </RadioGroup>
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>

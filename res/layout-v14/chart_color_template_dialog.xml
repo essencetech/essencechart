@@ -1,0 +1,182 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChartColorTemplateDialog" >
+    
+    <RadioGroup
+        android:id="@+id/radio_chart_color_template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:checkedButton="@+id/chart_color_template_00"
+        android:orientation="vertical" >
+        <RadioButton
+            android:id="@+id/chart_color_template_00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_00" />
+        <RadioButton
+            android:id="@+id/chart_color_template_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_01" />
+        <RadioButton
+            android:id="@+id/chart_color_template_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_02" />
+        <RadioButton
+            android:id="@+id/chart_color_template_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_03" />
+        <RadioButton
+            android:id="@+id/chart_color_template_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_04" />
+        <RadioButton
+            android:id="@+id/chart_color_template_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_05" />
+        <RadioButton
+            android:id="@+id/chart_color_template_06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_06" />
+        <RadioButton
+            android:id="@+id/chart_color_template_07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_07" />
+        <RadioButton
+            android:id="@+id/chart_color_template_08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_08" />
+        <RadioButton
+            android:id="@+id/chart_color_template_09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_09" />
+        <RadioButton
+            android:id="@+id/chart_color_template_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_10" />
+        <RadioButton
+            android:id="@+id/chart_color_template_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_11" />
+        <RadioButton
+            android:id="@+id/chart_color_template_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_12" />
+        <RadioButton
+            android:id="@+id/chart_color_template_13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_13" />
+        <RadioButton
+            android:id="@+id/chart_color_template_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_14" />
+        <RadioButton
+            android:id="@+id/chart_color_template_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_15" />
+        <RadioButton
+            android:id="@+id/chart_color_template_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_16" />
+        <RadioButton
+            android:id="@+id/chart_color_template_17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_17" />
+        <RadioButton
+            android:id="@+id/chart_color_template_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_18" />
+        <RadioButton
+            android:id="@+id/chart_color_template_19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_19" />
+        <RadioButton
+            android:id="@+id/chart_color_template_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_20" />
+        <RadioButton
+            android:id="@+id/chart_color_template_21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_21" />
+        <RadioButton
+            android:id="@+id/chart_color_template_22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_22" />
+        <RadioButton
+            android:id="@+id/chart_color_template_23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_23" />
+        <RadioButton
+            android:id="@+id/chart_color_template_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_24" />
+        <RadioButton
+            android:id="@+id/chart_color_template_25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_25" />
+        <RadioButton
+            android:id="@+id/chart_color_template_26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_26" />
+        <RadioButton
+            android:id="@+id/chart_color_template_27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_27" />
+        <RadioButton
+            android:id="@+id/chart_color_template_28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_28" />
+        <RadioButton
+            android:id="@+id/chart_color_template_29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_29" />
+        <RadioButton
+            android:id="@+id/chart_color_template_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_30" />
+        <RadioButton
+            android:id="@+id/chart_color_template_31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_31" />
+        <RadioButton
+            android:id="@+id/chart_color_template_32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chart_color_template_32" />
+    </RadioGroup>
+
+</ScrollView>
