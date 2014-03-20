@@ -1,0 +1,283 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeriesPropertyDialog" >
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_main_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffe8e8e8" >
+           
+		<TextView
+			android:id="@+id/text_series_main_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:text="@string/chart_series_property"
+			android:layout_marginLeft="10dip"
+			android:layout_marginTop="2dip"
+			android:textColor="#33b5e5"
+			android:textStyle="bold"
+			android:textAppearance="?android:attr/textAppearanceSmall" />
+	
+		<Button
+			android:id="@+id/button_series_main_sperator1"
+			android:layout_width="match_parent"
+			android:layout_height="2dip"
+			android:layout_below="@+id/text_series_main_title"
+			android:background="#33b5e5"
+			android:layout_marginTop="2dip" />
+	
+	</RelativeLayout>
+     
+    
+	<RelativeLayout
+        android:id="@+id/relative_layout_series_property"
+        android:layout_width="150dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_layout_series_main_title"
+        android:background="#ffe8e8e8" >
+		
+    <ScrollView
+    	android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dip" >
+		
+         <RadioGroup
+            android:id="@+id/radio_series_main_property"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:checkedButton="@+id/series_main_property_type"
+            android:orientation="vertical" >
+<!-- 
+            <RadioButton
+                android:id="@+id/series_main_property_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_type" />
+
+            <RadioButton
+                android:id="@+id/series_main_property_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_order" />
+ -->
+            <RadioButton
+                android:id="@+id/series_main_property_columns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_columns" />
+        </RadioGroup>
+
+	</RelativeLayout>
+    </ScrollView>
+	</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_property_type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_main_title"
+        android:layout_toRightOf="@+id/relative_layout_series_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+    
+			<RelativeLayout
+		        android:id="@+id/relative_layout_series_property_type_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+
+				<TextView
+	                android:id="@+id/text_series_property_type_column"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_property_series_columns"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+			    	            
+				<ListView
+			        android:id="@+id/listview_series_property_type_column"
+			        android:layout_width="fill_parent"
+			        android:layout_height="200dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/text_series_property_type_column"
+			        android:background="#ffffffff"
+			        android:transcriptMode="alwaysScroll" >
+			    </ListView>
+			    
+	            <RadioGroup
+	                android:id="@+id/radio_series_property_type"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="10dip"
+	                android:layout_marginLeft="10dip"
+	                android:layout_below="@+id/listview_series_property_type_column"
+	                android:orientation="vertical" >
+	
+	                <RadioButton
+	                    android:id="@+id/series_property_column_type_bar"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_column_bar" />
+	
+	                <RadioButton
+	                    android:id="@+id/series_property_column_type_hilo"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_column_hilobar" />
+	            </RadioGroup>
+			    
+		    </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_property_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_main_title"
+        android:layout_toRightOf="@+id/relative_layout_series_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+			
+			<RelativeLayout
+		        android:id="@+id/relative_layout_series_property_order_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+         
+				<TextView
+	                android:id="@+id/text_series_property_order_column"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_property_series_columns"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+			    	            
+				<ListView
+			        android:id="@+id/listview_series_property_order_column"
+			        android:layout_width="fill_parent"
+			        android:layout_height="200dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/text_series_property_order_column"
+			        android:background="#ffffffff"
+			        android:transcriptMode="alwaysScroll" >
+			    </ListView>
+			    
+				<Button
+					android:id="@+id/button_series_property_order_up"
+					android:layout_width="80dip"
+					android:layout_height="40dip"
+	                android:layout_marginTop="10dip"
+	                android:layout_marginLeft="10dip"
+					android:layout_below="@+id/listview_series_property_order_column"
+					android:text="@string/chart_property_series_column_up"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				
+				<Button
+					android:id="@+id/button_series_property_order_down"
+					android:layout_width="80dip"
+					android:layout_height="40dip"
+	                android:layout_marginLeft="10dip"
+					android:layout_below="@+id/button_series_property_order_up"
+					android:text="@string/chart_property_series_column_down"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				
+				<Button
+					android:id="@+id/button_series_property_order_stack"
+					android:layout_width="80dip"
+					android:layout_height="40dip"
+	                android:layout_marginLeft="10dip"
+					android:layout_below="@+id/button_series_property_order_down"
+					android:text="@string/chart_property_series_column_stack"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				
+				<Button
+					android:id="@+id/button_series_property_order_unstack"
+					android:layout_width="80dip"
+					android:layout_height="40dip"
+	                android:layout_marginLeft="10dip"
+					android:layout_below="@+id/button_series_property_order_stack"
+					android:text="@string/chart_property_series_column_unstack"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+			    
+		    </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_property_columns"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_main_title"
+        android:layout_toRightOf="@+id/relative_layout_series_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+            
+		    <RelativeLayout
+		        android:id="@+id/relative_layout_series_property_columns_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+
+				<TextView
+	                android:id="@+id/text_series_property_columns_column"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_property_series_columns"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+			    	            
+				<ListView
+			        android:id="@+id/listview_series_property_columns_column"
+			        android:layout_width="fill_parent"
+			        android:layout_height="250dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/text_series_property_columns_column"
+			        android:transcriptMode="alwaysScroll" >
+			    </ListView>
+			    
+				<Button
+					android:id="@+id/button_series_property_columns_property"
+					android:layout_width="80dip"
+					android:layout_height="40dip"
+	                android:layout_marginTop="10dip"
+	                android:layout_marginLeft="10dip"
+					android:layout_below="@+id/listview_series_property_columns_column"
+					android:text="@string/chart_property"
+					android:textAppearance="?android:attr/textAppearanceSmall" />		        
+	            
+        	</RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+</RelativeLayout>

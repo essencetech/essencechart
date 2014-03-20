@@ -1,0 +1,924 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeriesDatapointLabelsPropertyDialog" >
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_datapointlabels_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffe8e8e8" >
+           
+		<TextView
+			android:id="@+id/text_series_datapointlabels_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:text="@string/chart_series"
+			android:layout_marginLeft="10dip"
+			android:layout_marginTop="2dip"
+			android:textColor="#33b5e5"
+			android:textStyle="bold"
+			android:textAppearance="?android:attr/textAppearanceSmall" />
+	
+		<Button
+			android:id="@+id/button_series_datapointlabels_sperator1"
+			android:layout_width="match_parent"
+			android:layout_height="2dip"
+			android:layout_below="@+id/text_series_datapointlabels_title"
+			android:background="#33b5e5"
+			android:layout_marginTop="2dip" />
+	
+	</RelativeLayout>
+     
+    
+	<RelativeLayout
+        android:id="@+id/relative_layout_series_datapointlabels_property"
+        android:layout_width="150dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_layout_series_datapointlabels_title"
+        android:background="#ffe8e8e8" >
+		
+    <ScrollView
+    	android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dip" >
+		
+         <RadioGroup
+            android:id="@+id/radio_series_datapointlabels_property"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:checkedButton="@+id/series_datapointlabels_property_type"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/series_datapointlabels_property_apperance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_datapointlabels_apperance" />
+
+            <RadioButton
+                android:id="@+id/series_datapointlabels_property_fill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_datapointlabels_fill" />
+            
+            <RadioButton
+                android:id="@+id/series_datapointlabels_property_valueformat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_datapointlabels_valueformat" />
+            
+            <RadioButton
+                android:id="@+id/series_datapointlabels_property_percentformat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_datapointlabels_percentformat" />
+<!-- 
+            <RadioButton
+                android:id="@+id/series_datapointlabels_property_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_datapointlabels_font" />
+ -->
+        </RadioGroup>
+
+	</RelativeLayout>
+    </ScrollView>
+	</RelativeLayout>
+	            
+	
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_datapointlabels_property_apperance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_datapointlabels_title"
+        android:layout_toRightOf="@+id/relative_layout_series_datapointlabels_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+    
+			<RelativeLayout
+		        android:id="@+id/relative_layout_series_datapointlabels_property_apperance_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+
+		        <TextView
+		            android:id="@+id/text_series_datapointlabels_property_apperance_textloaction"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_property_series_datapointlabels_apperance_textloaction"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+			    
+	            <RadioGroup
+	                android:id="@+id/radio_series_datapointlabels_property_apperance_textloaction"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="10dip"
+	                android:layout_below="@+id/text_series_datapointlabels_property_apperance_textloaction"
+	                android:orientation="vertical" >
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_apperance_textloaction_none"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_apperance_textloaction_none" />
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_apperance_textloaction_above"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_apperance_textloaction_above" />
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_apperance_textloaction_below"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_apperance_textloaction_below" />
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_apperance_textloaction_center"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_apperance_textloaction_center" />
+	                
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_apperance_textloaction_base"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_apperance_textloaction_base" />
+	            </RadioGroup>
+			    
+		        <Button
+					android:id="@+id/button_chart_property_series_datapointlabels_apperance_textloaction_sperator1"
+					android:layout_width="match_parent"
+					android:layout_height="2dip"
+					android:layout_below="@+id/radio_series_datapointlabels_property_apperance_textloaction"
+					android:layout_marginLeft="-10dip"
+					android:layout_marginTop="10dip" />
+		        
+		        <TextView
+		            android:id="@+id/text_series_datapointlabels_property_apperance_label"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_apperance_label"
+		            android:layout_below="@+id/button_chart_property_series_datapointlabels_apperance_textloaction_sperator1"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		        
+	            <TextView
+	                android:id="@+id/text_series_datapointlabels_property_apperance_label_value"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:text="@string/chart_property_series_datapointlabels_apperance_label_value"
+		            android:layout_marginLeft="10dip"
+		            android:layout_below="@+id/text_series_datapointlabels_property_apperance_label"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+				<Switch
+	                android:id="@+id/switch_series_datapointlabels_property_apperance_label_value"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignTop="@+id/text_series_datapointlabels_property_apperance_label_value"
+	                android:layout_marginLeft="200dip"
+	                android:text=""
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+				
+	            <TextView
+	                android:id="@+id/text_series_datapointlabels_property_apperance_label_percent"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:layout_below="@+id/text_series_datapointlabels_property_apperance_label_value"
+		            android:text="@string/chart_property_series_datapointlabels_apperance_label_percent"
+		            android:layout_marginLeft="10dip"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+				<Switch
+	                android:id="@+id/switch_series_datapointlabels_property_apperance_label_percent"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignTop="@+id/text_series_datapointlabels_property_apperance_label_percent"
+	                android:layout_marginLeft="200dip"
+	                android:text=""
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+				
+	            <TextView
+	                android:id="@+id/text_series_datapointlabels_property_apperance_label_seriesname"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:layout_below="@+id/text_series_datapointlabels_property_apperance_label_percent"
+		            android:text="@string/chart_property_series_datapointlabels_apperance_label_seriesname"
+		            android:layout_marginLeft="10dip"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+				<Switch
+	                android:id="@+id/switch_series_datapointlabels_property_apperance_label_seriesname"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignTop="@+id/text_series_datapointlabels_property_apperance_label_seriesname"
+	                android:layout_marginLeft="200dip"
+	                android:text=""
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+				
+	            <TextView
+	                android:id="@+id/text_series_datapointlabels_property_apperance_label_pointname"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:layout_below="@+id/text_series_datapointlabels_property_apperance_label_seriesname"
+		            android:text="@string/chart_property_series_datapointlabels_apperance_label_pointname"
+		            android:layout_marginLeft="10dip"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+				<Switch
+	                android:id="@+id/switch_series_datapointlabels_property_apperance_label_pointname"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignTop="@+id/text_series_datapointlabels_property_apperance_label_pointname"
+	                android:layout_marginLeft="200dip"
+	                android:text=""
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+<!-- 
+		        <Button
+					android:id="@+id/button_chart_property_series_datapointlabels_apperance_label_sperator1"
+					android:layout_width="match_parent"
+					android:layout_height="2dip"
+					android:layout_below="@+id/text_series_datapointlabels_property_apperance_label_pointname"
+					android:layout_marginLeft="-10dip"
+					android:layout_marginTop="10dip" />
+		        
+		        <TextView
+		            android:id="@+id/text_series_datapointlabels_property_apperance_linestyle"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_property_series_datapointlabels_apperance_linestyle"
+		            android:layout_below="@+id/button_chart_property_series_datapointlabels_apperance_label_sperator1"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <RadioGroup
+	                android:id="@+id/radio_series_datapointlabels_property_apperance_linestyle"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="10dip"
+	                android:layout_below="@+id/text_series_datapointlabels_property_apperance_linestyle"
+	                android:orientation="vertical" >
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_apperance_linestyle_none"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_apperance_linestyle_none" />
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_apperance_linestyle_angle"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_apperance_linestyle_angle" />
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_apperance_linestyle_straight"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_apperance_linestyle_straight" />
+	            </RadioGroup>
+ -->
+	            
+		    </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_datapointlabels_property_fill"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_datapointlabels_title"
+        android:layout_toRightOf="@+id/relative_layout_series_datapointlabels_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+			
+			<RelativeLayout
+		        android:id="@+id/relative_layout_series_datapointlabels_property_fill_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+				
+		        <TextView
+		            android:id="@+id/text_series_datapointlabels_property_fill_fill"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_property_series_datapointlabels_fill_fill"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		        
+	            <RadioGroup
+	                android:id="@+id/radio_series_datapointlabels_property_fill_fillpattern"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="10dip"
+	                android:layout_below="@+id/text_series_datapointlabels_property_fill_fill"
+	                android:orientation="vertical" >
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_fill_fillpattern_none"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_fill_fillpattern_none" />
+	                
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_fill_fillpattern_solid"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_fill_fillpattern_solid" />
+	            </RadioGroup>
+		        
+		        <TextView
+		            android:id="@+id/text_series_datapointlabels_property_fill_fillcolor"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:text="@string/chart_property_series_datapointlabels_fill_fillcolor"
+		            android:layout_below="@+id/radio_series_datapointlabels_property_fill_fillpattern"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		        
+                <Button
+					android:id="@+id/button_series_datapointlabels_property_fill_fillcolor_preview"
+					android:layout_width="30dip"
+					android:layout_height="30dip"
+	                android:layout_alignTop="@+id/text_series_datapointlabels_property_fill_fillcolor"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="123dip"
+					android:text="" />
+<!-- 
+		        <TextView
+		            android:id="@+id/text_series_datapointlabels_property_fill_patterncolor"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="10dip"
+		            android:layout_marginTop="10dip"
+		            android:text="@string/chart_property_series_datapointlabels_fill_patterncolor"
+		            android:layout_below="@+id/text_series_datapointlabels_property_fill_fillcolor"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		        
+                <Button
+					android:id="@+id/button_series_datapointlabels_property_fill_patterncolor_preview"
+					android:layout_width="30dip"
+					android:layout_height="30dip"
+	                android:layout_alignTop="@+id/text_series_datapointlabels_property_fill_patterncolor"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="123dip"
+					android:text="" />
+ -->
+		        <Button
+					android:id="@+id/text_series_datapointlabels_property_fill_patterncolor_sperator1"
+					android:layout_width="match_parent"
+					android:layout_height="2dip"
+					android:layout_below="@+id/text_series_datapointlabels_property_fill_fillcolor"
+					android:layout_marginLeft="-10dip"
+					android:layout_marginTop="10dip" />
+		        
+		        <TextView
+		            android:id="@+id/text_series_datapointlabels_property_fill_edge"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:text="@string/chart_property_series_datapointlabels_fill_edge"
+		            android:layout_below="@+id/text_series_datapointlabels_property_fill_patterncolor_sperator1"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		        
+	            <RadioGroup
+	                android:id="@+id/radio_series_datapointlabels_property_fill_edgestyle"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="10dip"
+	                android:layout_below="@+id/text_series_datapointlabels_property_fill_edge"
+	                android:orientation="vertical" >
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_fill_edgestyle_none"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_fill_edgestyle_none" />
+	                
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_fill_edgestyle_solid"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_fill_edgestyle_solid" />
+
+	            </RadioGroup>
+<!-- 
+		        <TextView
+		            android:id="@+id/text_series_datapointlabels_property_fill_edgewidth"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="10dip"
+		            android:layout_marginTop="10dip"
+		            android:text="@string/chart_property_series_datapointlabels_fill_edgewidth"
+		            android:layout_below="@+id/radio_series_datapointlabels_property_fill_edgestyle"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		        
+	            <RadioGroup
+	                android:id="@+id/radio_series_datapointlabels_property_fill_edgewidth"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="20dip"
+	                android:layout_below="@+id/text_series_datapointlabels_property_fill_edgewidth"
+	                android:orientation="vertical" >
+	
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_fill_edgewidth_1"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_fill_edgewidth_1" />
+	                
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_fill_edgewidth_2"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_fill_edgewidth_2" />
+	                
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_fill_edgewidth_3"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_fill_edgewidth_3" />
+	                
+	                <RadioButton
+	                    android:id="@+id/series_datapointlabels_property_fill_edgewidth_4"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/chart_property_series_datapointlabels_fill_edgewidth_4" />
+
+	            </RadioGroup>
+ -->
+		        <TextView
+		            android:id="@+id/text_series_datapointlabels_property_fill_edgecolor"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:text="@string/chart_property_series_datapointlabels_fill_edgecolor"
+		            android:layout_below="@+id/radio_series_datapointlabels_property_fill_edgestyle"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		        
+                <Button
+					android:id="@+id/button_series_datapointlabels_property_fill_edgecolor_preview"
+					android:layout_width="30dip"
+					android:layout_height="30dip"
+	                android:layout_alignTop="@+id/text_series_datapointlabels_property_fill_edgecolor"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="123dip"
+					android:text="" />
+		        
+		    </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_datapointlabels_property_valueformat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_datapointlabels_title"
+        android:layout_toRightOf="@+id/relative_layout_series_datapointlabels_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+			
+			<RelativeLayout
+		        android:id="@+id/relative_layout_series_datapointlabels_property_valueformat_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+	            
+				<EditText
+			        android:id="@+id/edit_series_datapointlabels_property_valueformat"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="20dip"
+			        android:ems="10" >
+			    </EditText>
+			    
+				<Button
+					android:id="@+id/button_series_datapointlabels_property_valueformat"
+					android:layout_width="80dip"
+					android:layout_height="40dip"
+					android:layout_below="@+id/edit_series_datapointlabels_property_valueformat"
+					android:text="@string/chart_property_apply"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				
+		        <Button
+					android:id="@+id/button_series_datapointlabels_property_valueformat_sperator1"
+					android:layout_width="match_parent"
+					android:layout_height="2dip"
+					android:layout_below="@+id/button_series_datapointlabels_property_valueformat"
+					android:layout_marginLeft="-10dip"
+					android:layout_marginTop="10dip" />
+		        
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_valueformat_general"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_general"
+		            android:layout_below="@+id/button_series_datapointlabels_property_valueformat_sperator1"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_valueformat_general"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_valueformat_general" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_valueformat_number"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_number"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_valueformat_general"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_valueformat_number"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_valueformat_number" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_valueformat_currency"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_currency"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_valueformat_number"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_valueformat_currency"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_valueformat_currency" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_valueformat_date"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_date"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_valueformat_currency"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_valueformat_date"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_valueformat_date" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_valueformat_time"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_time"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_valueformat_date"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_valueformat_time"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_valueformat_time" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_valueformat_percentage"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_percentage"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_valueformat_time"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_valueformat_percentage"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_valueformat_percentage" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_valueformat_fraction"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_fraction"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_valueformat_percentage"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_valueformat_fraction"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_valueformat_fraction" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_valueformat_scientific"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_scientific"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_valueformat_fraction"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_valueformat_scientific"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_valueformat_scientific" >
+			    </ListView>
+			    
+		    </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_datapointlabels_property_percentformat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_datapointlabels_title"
+        android:layout_toRightOf="@+id/relative_layout_series_datapointlabels_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+            
+		    <RelativeLayout
+		        android:id="@+id/relative_layout_series_datapointlabels_property_percentformat_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+
+				<EditText
+			        android:id="@+id/edit_series_datapointlabels_property_percentformat"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="20dip"
+			        android:ems="10" >
+			    </EditText>
+			    
+				<Button
+					android:id="@+id/button_series_datapointlabels_property_percentformat"
+					android:layout_width="80dip"
+					android:layout_height="40dip"
+					android:layout_below="@+id/edit_series_datapointlabels_property_percentformat"
+					android:text="@string/chart_property_apply"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				
+		        <Button
+					android:id="@+id/button_series_datapointlabels_property_percentformat_sperator1"
+					android:layout_width="match_parent"
+					android:layout_height="2dip"
+					android:layout_below="@+id/button_series_datapointlabels_property_percentformat"
+					android:layout_marginLeft="-10dip"
+					android:layout_marginTop="10dip" />
+		        
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_percentformat_general"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_general"
+		            android:layout_below="@+id/button_series_datapointlabels_property_percentformat_sperator1"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_percentformat_general"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_percentformat_general" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_percentformat_number"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_number"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_percentformat_general"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_percentformat_number"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_percentformat_number" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_percentformat_currency"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_currency"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_percentformat_number"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_percentformat_currency"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_percentformat_currency" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_percentformat_date"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_date"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_percentformat_currency"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_percentformat_date"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_percentformat_date" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_percentformat_time"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_time"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_percentformat_date"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_percentformat_time"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_percentformat_time" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_percentformat_percentage"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_percentage"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_percentformat_time"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_percentformat_percentage"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_percentformat_percentage" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_percentformat_fraction"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_fraction"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_percentformat_percentage"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_percentformat_fraction"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_percentformat_fraction" >
+			    </ListView>
+			    
+		        <Button
+		            android:id="@+id/button_series_datapointlabels_property_percentformat_scientific"
+		            android:layout_width="150dip"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_datapointlabels_valueformat_scientific"
+		            android:layout_below="@+id/listview_series_datapointlabels_property_percentformat_fraction"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+				<ListView
+			        android:id="@+id/listview_series_datapointlabels_property_percentformat_scientific"
+			        android:layout_width="match_parent"
+			        android:layout_height="0dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/button_series_datapointlabels_property_percentformat_scientific" >
+			    </ListView>
+	            
+        	</RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_datapointlabels_property_font"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_datapointlabels_title"
+        android:layout_toRightOf="@+id/relative_layout_series_datapointlabels_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+            
+		    <RelativeLayout
+		        android:id="@+id/relative_layout_series_datapointlabels_property_font_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+
+		        
+	            
+        	</RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+    
+    
+</RelativeLayout>

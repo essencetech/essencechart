@@ -49,7 +49,6 @@ public class ChartTypeDialog extends Dialog implements OnCheckedChangeListener {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
 		if (m_Chart == null)

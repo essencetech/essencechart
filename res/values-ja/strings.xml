@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string name="app_name">エッセンス　チャート SDK</string>
+    <string name="blogger_url">http://essenceware.blogspot.com</string>
+    <string name="button_visit_blogger">ブログへ</string>
+    <string name="button_close">閉じる</string>
+    <string name="menu_about">情報</string>
+    <string name="menu_settings">設定</string>
+    <string name="menu_chart_type">グラフの種類</string>
+    <string name="menu_chart_color_template">グラフのスタイル</string>
+    <string name="chart_type_class01">縦棒グラフ</string>
+    <string name="chart_type_class01_sub01">集合縦棒</string>
+    <string name="chart_type_class01_sub02">積み上げ縦棒</string>
+    <string name="chart_type_class01_sub03">100% 積み上げ縦棒</string>
+    <string name="chart_type_class01_sub04">3-D 縦棒グラフ</string>
+    <string name="chart_type_class01_sub05">3-D 集合縦棒</string>
+    <string name="chart_type_class01_sub06">3-D 100% 積み上げ縦棒</string>
+    <string name="chart_type_class02">折れ線グラフ</string>
+    <string name="chart_type_class02_sub01">折れ線グラフ</string>
+    <string name="chart_type_class02_sub02">積み上げ折れ線</string>
+    <string name="chart_type_class02_sub03">マーカー付き折れ線</string>
+    <string name="chart_type_class02_sub04">3-D 折れ線</string>
+    <string name="chart_type_class03">円グラフ</string>
+    <string name="chart_type_class03_sub01">円グラフ</string>
+    <string name="chart_type_class03_sub02">分割円</string>
+    <string name="chart_type_class03_sub03">3-D 効果付き円</string>
+    <string name="chart_type_class03_sub04">3-D 効果付き分割円</string>
+    <string name="chart_type_class04">横棒グラフ</string>
+    <string name="chart_type_class04_sub01">集合横棒</string>
+    <string name="chart_type_class04_sub02">積み上げ横棒</string>
+    <string name="chart_type_class04_sub03">100% 積み上げ横棒</string>
+    <string name="chart_type_class04_sub04">3-D 効果付き 集合横棒</string>
+    <string name="chart_type_class04_sub05">3-D 効果付き 積み上げ横棒</string>
+    <string name="chart_type_class04_sub06">3-D 効果付き 100% 積み上げ横棒</string>
+    <string name="chart_type_class05">面グラフ</string>
+    <string name="chart_type_class05_sub01">面グラフ</string>
+    <string name="chart_type_class05_sub02">100% 積み上げ面</string>
+    <string name="chart_type_class05_sub03">3-D 面</string>
+    <string name="chart_type_class05_sub04">3-D 効果付き 100% 積み上げ面</string>
+    <string name="chart_type_class06">散布図</string>
+    <string name="chart_type_class06_sub01">散布図 (マーカーなし)</string>
+    <string name="chart_type_class06_sub02">直線付き散布図 (マーカー付き)</string>
+    <string name="chart_type_class06_sub03">>直線付き散布図</string>
+    <string name="chart_type_class07">株価チャート</string>
+    <string name="chart_type_class07_sub01">高値 - 安値 - 終値</string>
+    <string name="chart_type_class07_sub02">始値 - 高値 - 安値 - 終値</string>
+    <string name="chart_type_class08">等高線グラフ</string>
+    <string name="chart_type_class08_sub01">等高線</string>
+    <string name="chart_type_class08_sub02">3-D 等高線</string>
+    <string name="chart_type_class09">ドーナツ グラフ</string>
+    <string name="chart_type_class09_sub01">3-D ドーナツ</string>
+    <string name="chart_type_class09_sub02">3-D 分割ドーナツ</string>
+    <string name="chart_type_class10">バブル チャート</string>
+    <string name="chart_type_class10_sub01">バブル</string>
+    <string name="chart_type_class11">レーダー チャート</string>
+    <string name="chart_type_class11_sub01">レーダー (マーカーなし)</string>
+    <string name="chart_type_class11_sub02">レーダー (マーカー付き)</string>
+    <string name="chart_type_class12">複合グラフ</string>
+    <string name="chart_type_class12_sub01">複合グラフ</string>
+    <string name="chart_type_class12_sub02">3-D 複合グラフ</string>
+    <string name="chart_type_unknown">種類不明</string>
+   
+    <string name="chart_size">サイズ</string>
+    <string name="chart_rotate_x">回転(X)</string>
+    <string name="chart_rotate_y">回転(Y)</string>
+    <string name="chart_rotate_z">奥行き</string>
+    <string name="chart_alpha">透視投影</string>
+    <string name="chart_color_template_00">デフォルト</string>
+    <string name="chart_color_template_01">テンプレート-01</string>
+    <string name="chart_color_template_02">テンプレート-02</string>
+    <string name="chart_color_template_03">テンプレート-03</string>
+    <string name="chart_color_template_04">テンプレート-04</string>
+    <string name="chart_color_template_05">テンプレート-05</string>
+    <string name="chart_color_template_06">テンプレート-06</string>
+    <string name="chart_color_template_07">テンプレート-07</string>
+    <string name="chart_color_template_08">テンプレート-08</string>
+    <string name="chart_color_template_09">テンプレート-09</string>
+    <string name="chart_color_template_10">テンプレート-10</string>
+    <string name="chart_color_template_11">テンプレート-11</string>
+    <string name="chart_color_template_12">テンプレート-12</string>
+    <string name="chart_color_template_13">テンプレート-13</string>
+    <string name="chart_color_template_14">テンプレート-14</string>
+    <string name="chart_color_template_15">テンプレート-15</string>
+    <string name="chart_color_template_16">テンプレート-16</string>
+    <string name="chart_color_template_17">テンプレート-17</string>
+    <string name="chart_color_template_18">テンプレート-18</string>
+    <string name="chart_color_template_19">テンプレート-19</string>
+    <string name="chart_color_template_20">テンプレート-20</string>
+    <string name="chart_color_template_21">テンプレート-21</string>
+    <string name="chart_color_template_22">テンプレート-22</string>
+    <string name="chart_color_template_23">テンプレート-23</string>
+    <string name="chart_color_template_24">テンプレート-24</string>
+    <string name="chart_color_template_25">テンプレート-25</string>
+    <string name="chart_color_template_26">テンプレート-26</string>
+    <string name="chart_color_template_27">テンプレート-27</string>
+    <string name="chart_color_template_28">テンプレート-28</string>
+    <string name="chart_color_template_29">テンプレート-29</string>
+    <string name="chart_color_template_30">テンプレート-30</string>
+    <string name="chart_color_template_31">テンプレート-31</string>
+    <string name="chart_color_template_32">テンプレート-32</string> 
+    <string name="chart_title">Title</string>
+    <string name="chart_legend">凡例</string>   
+    <string name="chart_type">種類</string>
+    <string name="chart_style">スタイル</string>
+    <string name="chart_animation">アニメーション</string>
+    <string name="chart_animation_loop">繰り返し</string>
+    <string name="chart_data_queue">データキュー</string>
+    <string name="chart_backdrop">Chart Backdrop</string>
+    <string name="chart_plotbackdrop">Plot Backdrop</string>
+    <string name="chart_xaxis">X-Axis</string>
+    <string name="chart_yaxis">Y-Axis</string>
+    <string name="chart_y2axis">Y2-Axis</string>
+    <string name="chart_zaxis">Z-Axis</string>
+    <string name="chart_series">Series</string>
+
+    <string name="chart_property">Property</string>
+    <string name="chart_title_property">Title Property</string>
+    <string name="chart_legend_property">Legend Property</string>
+    <string name="chart_backdrop_property">Chart Backdrop Property</string>
+    <string name="chart_plotbackdrop_property">Plot Backdrop Property</string>
+    <string name="chart_xaxis_title_property">X-Axis Title Property</string>
+    <string name="chart_yaxis_title_property">Y-Axis Title Property</string>
+    <string name="chart_zaxis_title_property">Z-Axis Title Property</string>
+    <string name="chart_series_property">Series Property</string>
+    
+    <string name="chart_property_title">Title Imput</string>
+    <string name="chart_property_location">Location</string>
+    <string name="chart_property_font">Font</string>
+    <string name="chart_property_apply">Apply</string>
+    <string name="chart_property_ok">Ok</string>
+    <string name="chart_property_cancel">Cancel</string>
+    <string name="chart_title_fileopen">File Open</string>
+    
+    <string name="chart_property_location_topleft">Left Top</string>
+    <string name="chart_property_location_top">Top</string>
+    <string name="chart_property_location_topright">Right Top</string>
+    <string name="chart_property_location_left">Left</string>
+    <string name="chart_property_location_right">Right</string>
+    <string name="chart_property_location_bottomleft">Left Bottom</string>
+    <string name="chart_property_location_bottom">Bottom</string>
+    <string name="chart_property_location_bottomright">Right Bottom</string>
+
+    
+    <string name="chart_property_font_type">Type</string>
+    <string name="chart_property_font_type_sans">Sans</string>
+    <string name="chart_property_font_type_serif">Serif</string>
+    <string name="chart_property_font_type_monospace">Monospace</string>
+    
+    <string name="chart_property_font_style">Style</string>
+    <string name="chart_property_font_style_regular">Regular</string>
+    <string name="chart_property_font_style_bold">Bold</string>
+    <string name="chart_property_font_style_italic">Italic</string>
+    <string name="chart_property_font_style_bolditalic">Bold Italic</string>
+    
+    <string name="chart_property_font_size">Size</string>
+    <string name="chart_property_font_size_8">Size 8</string>
+    <string name="chart_property_font_size_10">Size 10</string>
+    <string name="chart_property_font_size_12">Size 12</string>
+    <string name="chart_property_font_size_20">Size 20</string>
+    <string name="chart_property_font_size_24">Size 24</string>
+    <string name="chart_property_font_size_30">Size 30</string>
+    
+    <string name="chart_property_font_strikeout">StrikeOut</string>
+    <string name="chart_property_font_underline">UnderLine</string>
+    
+    <string name="chart_property_font_color">Color</string>
+    
+    <string name="chart_backdrop_property_frame">Frmae</string>
+    <string name="chart_backdrop_property_frame_style">Style</string>
+    
+    <string name="chart_property_backdropframe_style_null">Empty</string>
+    <string name="chart_property_backdropframe_style_singleline">Single Line</string>
+    <string name="chart_property_backdropframe_style_doubleline">Double Line</string>
+    <string name="chart_property_backdropframe_style_thickinner">Thick Inner</string>
+    <string name="chart_property_backdropframe_style_thickouter">Thick Outer</string>
+    
+    <string name="chart_backdrop_property_picture">Image</string>
+    <string name="chart_property_picture_file">File</string>
+    <string name="chart_property_picture_clear">Clear</string>
+    <string name="chart_property_picture_drawstyle">Position</string>
+    <string name="chart_property_picture_drawstyle_actulsize">Center</string>
+    <string name="chart_property_picture_drawstyle_fullsize">Fill</string>
+    <string name="chart_property_picture_drawstyle_fitsize">Fit</string>
+    <string name="chart_property_picture_drawstyle_stretch">Stretch</string>
+    <string name="chart_property_picture_drawstyle_tiled">Tile</string>
+    
+    
+    <string name="chart_property_series_type">Type</string>
+    <string name="chart_property_series_order">Order</string>
+    <string name="chart_property_series_columns">Columns</string>
+    
+    <string name="chart_property_series_allcolumns">All Columns</string>
+    <string name="chart_property_series_column">Column</string>
+    <string name="chart_property_series_column_bar">Bar</string>
+    <string name="chart_property_series_column_hilobar">Hi Lo Bar</string>
+    <string name="chart_property_series_column_up">Up</string>
+    <string name="chart_property_series_column_down">Down</string>
+    <string name="chart_property_series_column_stack">Stack</string>
+    <string name="chart_property_series_column_unstack">Unstack</string>
+    
+    <string name="chart_property_series_column_property">Column Property</string>
+    
+    <string name="chart_property_series_options">Options</string>
+    <string name="chart_property_series_lines">Lines</string>
+    <string name="chart_property_series_guidelines">Guide Lines</string>
+    <string name="chart_property_series_datapoint">Datapoint</string>
+    <string name="chart_property_series_datapointlabels">Datapoint Labels</string>
+    
+    <string name="chart_property_series_options_hideseries">Hide Series</string>
+    <string name="chart_property_series_options_excludeseries">Exclude Series</string>
+    <string name="chart_property_series_options_ploton">Plot On 2nd Y axis</string>
+    <string name="chart_property_series_options_showmarkers">Show Markers</string>
+    <string name="chart_property_series_options_automarkers">Automatic Markers</string>
+    <string name="chart_property_series_options_hiloclose">Hi Lo Close</string>
+    <string name="chart_property_series_options_gaincolor">Gain Color</string>
+    <string name="chart_property_series_options_losscolor">Loss Color</string>
+    
+    <string name="chart_property_series_datapointlabels_rows">Rows</string>
+    <string name="chart_property_series_datapointlabels_allrows">All Rows</string>
+    <string name="chart_property_series_datapoint_property">Datapoint Property</string>
+    
+    
+    <string name="chart_property_series_datapointlabels_apperance">Apperance</string>
+    <string name="chart_property_series_datapointlabels_fill">Fill</string>
+    <string name="chart_property_series_datapointlabels_valueformat">Value Format</string>
+    <string name="chart_property_series_datapointlabels_percentformat">Percent Format</string>
+    <string name="chart_property_series_datapointlabels_font">Font</string>
+    
+    <string name="chart_property_series_datapointlabels_apperance_textloaction">Text Location</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_none">None</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_above">Above</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_below">Below</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_center">Center</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_base">Base</string>
+    
+    <string name="chart_property_series_datapointlabels_apperance_label">Datapoint Label</string>
+    <string name="chart_property_series_datapointlabels_apperance_label_value">Value</string>
+    <string name="chart_property_series_datapointlabels_apperance_label_percent">Percent</string>
+    <string name="chart_property_series_datapointlabels_apperance_label_seriesname">Series Name</string>
+    <string name="chart_property_series_datapointlabels_apperance_label_pointname">Point Nmae</string>
+
+    <string name="chart_property_series_datapointlabels_apperance_linestyle">Line Style</string>
+    <string name="chart_property_series_datapointlabels_apperance_linestyle_none">None</string>
+    <string name="chart_property_series_datapointlabels_apperance_linestyle_angle">Angled Line</string>
+    <string name="chart_property_series_datapointlabels_apperance_linestyle_straight">Straight Line</string>
+    
+    <string name="chart_property_series_datapointlabels_valueformat_general">General</string>
+    <string name="chart_property_series_datapointlabels_valueformat_number">Number</string>
+    <string name="chart_property_series_datapointlabels_valueformat_currency">Currency</string>
+    <string name="chart_property_series_datapointlabels_valueformat_date">Date</string>
+    <string name="chart_property_series_datapointlabels_valueformat_time">Time</string>
+    <string name="chart_property_series_datapointlabels_valueformat_percentage">Percentage</string>
+    <string name="chart_property_series_datapointlabels_valueformat_fraction">Fraction</string>
+    <string name="chart_property_series_datapointlabels_valueformat_scientific">Scientific</string>
+    
+    <string name="chart_property_series_datapointlabels_fill_fill">Fill</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern">Fill Pattern</string>
+    <string name="chart_property_series_datapointlabels_fill_fillcolor">Fill Color</string>
+    <string name="chart_property_series_datapointlabels_fill_patterncolor">Pattern Color</string>
+    <string name="chart_property_series_datapointlabels_fill_edge">Edge</string>
+    <string name="chart_property_series_datapointlabels_fill_edgestyle">Edge Style</string>
+    <string name="chart_property_series_datapointlabels_fill_edgewidth">Edge Width</string>
+    <string name="chart_property_series_datapointlabels_fill_edgecolor">Edge Color</string>
+    
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_none">None</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_solid">Solid</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_pattern2">Bold Horizontal</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_pattern3">Bold Vertical</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_pattern4">Checks</string>
+    
+    <string name="chart_property_series_datapointlabels_fill_edgestyle_none">None</string>
+    <string name="chart_property_series_datapointlabels_fill_edgestyle_solid">Solid</string>
+    
+    <string name="chart_property_series_datapointlabels_fill_edgewidth_1">1 Point</string>
+    <string name="chart_property_series_datapointlabels_fill_edgewidth_2">2 Point</string>
+    <string name="chart_property_series_datapointlabels_fill_edgewidth_3">3 Point</string>
+    <string name="chart_property_series_datapointlabels_fill_edgewidth_4">4 Point</string>
+    
+    
+</resources>

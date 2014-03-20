@@ -48,7 +48,6 @@ public class ChartColorTemplateDialog extends Dialog implements OnCheckedChangeL
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
 		if (m_Chart == null)

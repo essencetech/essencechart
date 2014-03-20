@@ -8,4 +8,9 @@
         <!-- API 11 theme customizations can go here. -->
     </style>
 
+    <!-- TransparentBackground theme. -->
+    <style name="TransparentBackground" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    
 </resources>

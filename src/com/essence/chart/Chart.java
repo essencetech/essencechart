@@ -29,7 +29,6 @@ public class Chart extends View {
 	private int					m_nOldChartGroup = 0x0000;
 	private int					m_nCurChartType = 0;
 	
-	//Data Queue Animation value
 	public final int 			_DMA_DURATION	= 500;
 	public final int			_DMA_INTERVAL	= 1000;
 	
@@ -38,70 +37,57 @@ public class Chart extends View {
 	static final int			DEFAULT_CHART_WIDTH = 10;
 	static final int			DEFAULT_CHART_HEIGHT = 10;
 	
-	// 
-	static public final int		Chart_Type_Clustered_Column 						= 0x1111;	// 
-	static public final int		Chart_Type_Stacked_Column	 						= 0x1112;	// 
-	static public final int		Chart_Type_100percent_Stacked_Column	 			= 0x1113;	// 
-	static public final int		Chart_Type_3D_Column	 							= 0x1121;	// 
-	static public final int		Chart_Type_Stacked_Column_in_3D 					= 0x1122;	// 
-	static public final int		Chart_Type_100percent_Stacked_Column_in_3D 			= 0x1123;	// 
+	static public final int		Chart_Type_Clustered_Column 						= 0x1111; 
+	static public final int		Chart_Type_Stacked_Column	 						= 0x1112; 
+	static public final int		Chart_Type_100percent_Stacked_Column	 			= 0x1113; 
+	static public final int		Chart_Type_3D_Column	 							= 0x1121; 
+	static public final int		Chart_Type_Stacked_Column_in_3D 					= 0x1122; 
+	static public final int		Chart_Type_100percent_Stacked_Column_in_3D 			= 0x1123; 
 	
-	// 
-	static public final int		Chart_Type_Line			 							= 0x1211;	// 
-	static public final int		Chart_Type_Stacked_Line	 							= 0x1212;	// 
-	static public final int		Chart_Type_Line_with_Markets			 			= 0x1213;	// 
-	static public final int		Chart_Type_3D_Line		 							= 0x1221;	// 
+	static public final int		Chart_Type_Line			 							= 0x1211; 
+	static public final int		Chart_Type_Stacked_Line	 							= 0x1212; 
+	static public final int		Chart_Type_Line_with_Markets			 			= 0x1213; 
+	static public final int		Chart_Type_3D_Line		 							= 0x1221; 
 	
-	// 
-	static public final int		Chart_Type_Pie			 							= 0x1311;	// 
-	static public final int		Chart_Type_Exploded_Pie	 							= 0x1312;	// 
-	static public final int		Chart_Type_3D_Pie		 							= 0x1321;	// 
-	static public final int		Chart_Type_Exploded_pie_in_3D			 			= 0x1322;	// 
+	static public final int		Chart_Type_Pie			 							= 0x1311; 
+	static public final int		Chart_Type_Exploded_Pie	 							= 0x1312; 
+	static public final int		Chart_Type_3D_Pie		 							= 0x1321; 
+	static public final int		Chart_Type_Exploded_pie_in_3D			 			= 0x1322; 
 	
-	// 
-	static public final int		Chart_Type_Clustered_Bar 							= 0x1411;	// 
-	static public final int		Chart_Type_Stacked_Bar	 							= 0x1412;	// 
-	static public final int		Chart_Type_100percent_Stacked_Bar		 			= 0x1413;	// 
-	static public final int		Chart_Type_Clustered_Bar_in_3D			 			= 0x1421;	// 
-	static public final int		Chart_Type_Stacked_Bar_in_3D			 			= 0x1422;	// 
-	static public final int		Chart_Type_100percent_Stacked_Bar_in_3D	 			= 0x1423;	// 
+	static public final int		Chart_Type_Clustered_Bar 							= 0x1411; 
+	static public final int		Chart_Type_Stacked_Bar	 							= 0x1412; 
+	static public final int		Chart_Type_100percent_Stacked_Bar		 			= 0x1413; 
+	static public final int		Chart_Type_Clustered_Bar_in_3D			 			= 0x1421; 
+	static public final int		Chart_Type_Stacked_Bar_in_3D			 			= 0x1422; 
+	static public final int		Chart_Type_100percent_Stacked_Bar_in_3D	 			= 0x1423; 
 	
-	// 
-	static public final int		Chart_Type_Area			 							= 0x1511;	// 
-	static public final int		Chart_Type_100percent_Stacked_Area		 			= 0x1512;	// 
-	static public final int		Chart_Type_3D_Area		 							= 0x1521;	// 
-	static public final int		Chart_Type_100percent_Stacked_Area_in_3D 			= 0x1522;	// 
+	static public final int		Chart_Type_Area			 							= 0x1511; 
+	static public final int		Chart_Type_100percent_Stacked_Area		 			= 0x1512; 
+	static public final int		Chart_Type_3D_Area		 							= 0x1521; 
+	static public final int		Chart_Type_100percent_Stacked_Area_in_3D 			= 0x1522; 
 	
-	// 
-	static public final int		Chart_Type_Scatter_with_only_Markers	 			= 0x1611;	// 
-	static public final int		Chart_Type_Scatter_with_Straight_Lines_and_Markers	= 0x1612;	// 
-	static public final int		Chart_Type_Scatter_with_Straight_Lines	 			= 0x1613;	// 
+	static public final int		Chart_Type_Scatter_with_only_Markers	 			= 0x1611; 
+	static public final int		Chart_Type_Scatter_with_Straight_Lines_and_Markers	= 0x1612; 
+	static public final int		Chart_Type_Scatter_with_Straight_Lines	 			= 0x1613; 
 	
-	// 
-	static public final int		Chart_Type_High_Low_Close 							= 0x1711;	// 
-	static public final int		Chart_Type_Open_High_Low_Close						= 0x1712;	// 
+	static public final int		Chart_Type_High_Low_Close 							= 0x1711; 
+	static public final int		Chart_Type_Open_High_Low_Close						= 0x1712; 
 	
-	// 
-	static public final int		Chart_Type_Contour		 							= 0x1811;	// 
-	static public final int		Chart_Type_3D_Surface	 							= 0x1821;	// 
+	static public final int		Chart_Type_Contour		 							= 0x1811; 
+	static public final int		Chart_Type_3D_Surface	 							= 0x1821; 
 	
-	// 
-	static public final int		Chart_Type_3D_Dougnut	 							= 0x1921;	// 
-	static public final int		Chart_Type_Exploded_Dougnut_in_3D		 			= 0x1922;	// 
+	static public final int		Chart_Type_3D_Dougnut	 							= 0x1921; 
+	static public final int		Chart_Type_Exploded_Dougnut_in_3D		 			= 0x1922; 
 	
-	// 
-	static public final int		Chart_Type_Bubble		 							= 0x1a11;	// 
+	static public final int		Chart_Type_Bubble		 							= 0x1a11; 
 	
-	// 
-	static public final int		Chart_Type_Radar		 							= 0x1b11;	// 
-	static public final int		Chart_Type_Radar_with_Markers			 			= 0x1b12;	// 
+	static public final int		Chart_Type_Radar		 							= 0x1b11; 
+	static public final int		Chart_Type_Radar_with_Markers			 			= 0x1b12; 
 	
-	// 
-	static public final int		Chart_Type_Combine		 							= 0x1c11;	// 
-	static public final int		Chart_Type_3D_Combine	 							= 0x1c21;	// 
+	static public final int		Chart_Type_Combine		 							= 0x1c11; 
+	static public final int		Chart_Type_3D_Combine	 							= 0x1c21; 
 	
-	// 
-	static public final int		Chart_Type_Unknown		 							= 0xffff;	// 
+	static public final int		Chart_Type_Unknown		 							= 0xffff; 
 
 	class RowCol
 	{
@@ -424,7 +410,6 @@ public class Chart extends View {
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         
         if (widthMode == MeasureSpec.EXACTLY || widthMode == MeasureSpec.AT_MOST) {
-            // Parent has told us how big to be. So be it.
         	m_nChartWidth = widthSize;
         }
         else {
@@ -432,7 +417,6 @@ public class Chart extends View {
         }
         
         if (heightMode == MeasureSpec.EXACTLY || heightMode == MeasureSpec.AT_MOST) {
-            // Parent has told us how big to be. So be it.
         	m_nChartHeight = heightSize;
         }
         else {
@@ -529,8 +513,6 @@ public class Chart extends View {
 		 }
 	 }
 	 
-	 // Chart Interface
-	 
 	 public void setCallback(ChartCallback callback)
 	 {
 		 m_Callback = callback;
@@ -545,8 +527,6 @@ public class Chart extends View {
 		 
 		 if (IsDifferentChartGroup(type) == true)
 		 {
-			 //data first
-		 
 			 switch (type)
 			 {
 				 case Chart_Type_Clustered_Column:			
@@ -700,6 +680,1336 @@ public class Chart extends View {
 	 {
 		 native_setLegendVisible(m_NativeChart, visible);
 	 }
+	 public void setLegendLocation(int nLocation)
+	 {
+		 native_setLegendLocation(m_NativeChart, nLocation);
+		 invalidate();
+	 }
+	 public int getLegendLocation()
+	 {
+		 return native_getLegendLocation(m_NativeChart);
+	 }
+
+	 public void setLegendFontName(String name)
+	 {
+		 native_setLegendFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getLegendFontName()
+	 {
+		 return native_getLegendFontName(m_NativeChart);
+	 }
+
+	 public void setLegendFontSize(int nSize)
+	 {
+		 native_setLegendFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getLegendFontSize()
+	 {
+		 return native_getLegendFontSize(m_NativeChart);
+	 }
+
+	 public void setLegendFontStyle(int nStyle)
+	 {
+		 native_setLegendFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getLegendFontStyle()
+	 {
+		 return native_getLegendFontStyle(m_NativeChart);
+	 }
+
+	 public void setLegendFontColor(int nColor)
+	 {
+		 native_setLegendFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getLegendFontColor()
+	 {
+		 return native_getLegendFontColor(m_NativeChart);
+	 }
+	 
+	 public void setLegendFontStrikeout(boolean bUse)
+	 {
+		 native_setLegendFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getLegendFontStrikeout()
+	 {
+		 return native_getLegendFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setLegendFontUnderline(boolean bUse)
+	 {
+		 native_setLegendFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getLegendFontUnderline()
+	 {
+		 return native_getLegendFontUnderline(m_NativeChart);
+	 }
+
+	 public void setLegendBackdropStyle(int nStyle)
+	 {
+		 native_setLegendBackdropStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getLegendBackdropStyle()
+	 {
+		 return native_getLegendBackdropStyle(m_NativeChart);
+	 }
+
+	 public void setLegendBackdropColor(int nColor)
+	 {
+		 native_setLegendBackdropColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getLegendBackdropColor()
+	 {
+		 return native_getLegendBackdropColor(m_NativeChart);
+	 }
+	 
+	 public void setLegendPosition(float fX, float fY, float fWidth, float fHeight)
+	 {
+		 native_setLegendPosition(m_NativeChart, fX, fY, fWidth, fHeight);
+		 invalidate();
+	 }
+	 public float getLegendPositionX()
+	 {
+		 return native_getLegendPositionX(m_NativeChart);
+	 }
+	 public float getLegendPositionY()
+	 {
+		 return native_getLegendPositionY(m_NativeChart);
+	 }
+	 public float getLegendPositionWidth()
+	 {
+		 return native_getLegendPositionWidth(m_NativeChart);
+	 }
+	 public float getLegendPositionHeight()
+	 {
+		 return native_getLegendPositionHeight(m_NativeChart);
+	 }
+	 
+	 public void setLegendBackdropFillStyle(int nStyle)
+	 {
+		 native_setLegendBackdropFillStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getLegendBackdropFillStyle()
+	 {
+		 return native_getLegendBackdropFillStyle(m_NativeChart);
+	 }
+	 public void setLegendBackdropFillColor(int nColor)
+	 {
+		 native_setLegendBackdropFillColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getLegendBackdropFillColor()
+	 {
+		 return native_getLegendBackdropFillColor(m_NativeChart);
+	 }
+	 
+	 public int getChartBackdropStyle()
+	 {
+		 return native_getChartBackdropStyle(m_NativeChart);
+	 }
+	 public void setChartBackdropStyle(int nStyle)
+	 {
+		 native_setChartBackdropStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getChartBackdropColor()
+	 {
+		 return native_getChartBackdropColor(m_NativeChart);
+	 }
+	 public void setChartBackdropColor(int nColor)
+	 {
+		 native_setChartBackdropColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public void setChartBackdropPicture(String strName)
+	 {
+		 native_setChartBackdropPicture(m_NativeChart, strName);
+		 invalidate();
+	 }
+	 public String getChartBackdropPicture()
+	 {
+		 return native_getChartBackdropPicture(m_NativeChart);
+	 }
+	 public void setChartBackdropPictureDrawStyle(int nStyle)
+	 {
+		 native_setChartBackdropPictureDrawStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getChartBackdropPictureDrawStyle()
+	 {
+		 return native_getChartBackdropPictureDrawStyle(m_NativeChart);
+	 }
+	 
+	 public void setChartBackdropFillStyle(int nStyle)
+	 {
+		 native_setChartBackdropFillStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getChartBackdropFillStyle()
+	 {
+		 return native_getChartBackdropFillStyle(m_NativeChart);
+	 }
+	 public void setChartBackdropFillColor(int nColor)
+	 {
+		 native_setChartBackdropFillColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getChartBackdropFillColor()
+	 {
+		 return native_getChartBackdropFillColor(m_NativeChart);
+	 }
+
+	 public int getPlotBackdropStyle()
+	 {
+		 return native_getPlotBackdropStyle(m_NativeChart);
+	 }
+	 public void setPlotBackdropStyle(int nStyle)
+	 {
+		 native_setPlotBackdropStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getPlotBackdropColor()
+	 {
+		 return native_getPlotBackdropColor(m_NativeChart);
+	 }
+	 public void setPlotBackdropColor(int nColor)
+	 {
+		 native_setPlotBackdropColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public void setPlotBackdropPicture(String strName)
+	 {
+		 native_setPlotBackdropPicture(m_NativeChart, strName);
+		 invalidate();
+	 }
+	 public String getPlotBackdropPicture()
+	 {
+		 return native_getPlotBackdropPicture(m_NativeChart);
+	 }
+	 public void setPlotBackdropPictureDrawStyle(int nStyle)
+	 {
+		 native_setPlotBackdropPictureDrawStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getPlotBackdropPictureDrawStyle()
+	 {
+		 return native_getPlotBackdropPictureDrawStyle(m_NativeChart);
+	 }
+	 
+	 public void setPlotPosition(float fX, float fY, float fWidth, float fHeight)
+	 {
+		 native_setPlotPosition(m_NativeChart, fX, fY, fWidth, fHeight);
+		 invalidate();
+	 }
+	 public float getPlotPositionX()
+	 {
+		 return native_getPlotPositionX(m_NativeChart);
+	 }
+	 public float getPlotPositionY()
+	 {
+		 return native_getPlotPositionY(m_NativeChart);
+	 }
+	 public float getPlotPositionWidth()
+	 {
+		 return native_getPlotPositionWidth(m_NativeChart);
+	 }
+	 public float getPlotPositionHeight()
+	 {
+		 return native_getPlotPositionHeight(m_NativeChart);
+	 }
+	 
+	 public void setPlotFillStyle(int nStyle)
+	 {
+		 native_setPlotFillStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getPlotFillStyle()
+	 {
+		 return native_getPlotFillStyle(m_NativeChart);
+	 }
+	 public void setPlotFillColor(int nColor)
+	 {
+		 native_setPlotFillColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getPlotFillColor()
+	 {
+		 return native_getPlotFillColor(m_NativeChart);
+	 }
+	 
+	 public void setTitleText(String strTitle)
+	 {
+		 setTitle(strTitle);
+		 invalidate();
+	 }
+	 public String getTitleText()
+	 {
+		 return native_getTitleText(m_NativeChart);
+	 }
+
+	 public void setTitleVisible(boolean bVisible)
+	 {
+		 native_setTitleVisible(m_NativeChart, bVisible);
+		 invalidate();
+	 }
+	 public boolean getTitleVisible()
+	 {
+		 return native_getTitleVisible(m_NativeChart);
+	 }
+
+	 public void setTitleLocation(int nLocation)
+	 {
+		 native_setTitleLocation(m_NativeChart, nLocation);
+		 invalidate();
+	 }
+	 public int getTitleLocation()
+	 {
+		 return native_getTitleLocation(m_NativeChart);
+	 }
+
+	 public void setTitleFontName(String name)
+	 {
+		 native_setTitleFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getTitleFontName()
+	 {
+		 return native_getTitleFontName(m_NativeChart);
+	 }
+
+	 public void setTitleFontSize(int nSize)
+	 {
+		 native_setTitleFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getTitleFontSize()
+	 {
+		 return native_getTitleFontSize(m_NativeChart);
+	 }
+
+	 public void setTitleFontStyle(int nStyle)
+	 {
+		 native_setTitleFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getTitleFontStyle()
+	 {
+		 return native_getTitleFontStyle(m_NativeChart);
+	 }
+
+	 public void setTitleFontStrikeout(boolean bUse)
+	 {
+		 native_setTitleFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getTitleFontStrikeout()
+	 {
+		 return native_getTitleFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setTitleFontUnderline(boolean bUse)
+	 {
+		 native_setTitleFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getTitleFontUnderline()
+	 {
+		 return native_getTitleFontUnderline(m_NativeChart);
+	 }
+
+	 public void setTitleFontColor(int nColor)
+	 {
+		 native_setTitleFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getTitleFontColor()
+	 {
+		 return native_getTitleFontColor(m_NativeChart);
+	 }
+
+	 public void setTitleBackdropFillStyle(int nStyle)
+	 {
+		 native_setTitleBackdropFillStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getTitleBackdropFillStyle()
+	 {
+		 return native_getTitleBackdropFillStyle(m_NativeChart);
+	 }
+	 public void setTitleBackdropFillColor(int nColor)
+	 {
+		 native_setTitleBackdropFillColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getTitleBackdropFillColor()
+	 {
+		 return native_getTitleBackdropFillColor(m_NativeChart);
+	 }
+	 
+	 public void setTitleBackdropFrameStyle(int nStyle)
+	 {
+		 native_setTitleBackdropFrameStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getTitleBackdropFrameStyle()
+	 {
+		 return native_getTitleBackdropFrameStyle(m_NativeChart);
+	 }
+	 public void setTitleBackdropFrameColor(int nColor)
+	 {
+		 native_setTitleBackdropFrameColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getTitleBackdropFrameColor()
+	 {
+		 return native_getTitleBackdropFrameColor(m_NativeChart);
+	 }
+	 
+	 public void setXAxisVisible(boolean bVisible)
+	 {
+		 native_setXAxisVisible(m_NativeChart, bVisible);
+		 invalidate();
+	 }
+	 public boolean getXAxisVisible()
+	 {
+		 return native_getXAxisVisible(m_NativeChart);
+	 }
+
+	 public void setXAxisTitle(String strTitle)
+	 {
+		 native_setXAxisTitle(m_NativeChart, strTitle);
+		 invalidate();
+	 }
+	 public String getXAxisTitle()
+	 {
+		 return native_getXAxisTitle(m_NativeChart);
+	 }
+	 
+	 public void setXAxisTitleFontName(String name)
+	 {
+		 native_setXAxisTitleFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getXAxisTitleFontName()
+	 {
+		 return native_getXAxisTitleFontName(m_NativeChart);
+	 }
+
+	 public void setXAxisTitleFontSize(int nSize)
+	 {
+		 native_setXAxisTitleFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getXAxisTitleFontSize()
+	 {
+		 return native_getXAxisTitleFontSize(m_NativeChart);
+	 }
+
+	 public void setXAxisTitleFontStyle(int nStyle)
+	 {
+		 native_setXAxisTitleFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getXAxisTitleFontStyle()
+	 {
+		 return native_getXAxisTitleFontStyle(m_NativeChart);
+	 }
+	 
+	 public void setXAxisTitleFontColor(int nColor)
+	 {
+		 native_setXAxisTitleFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getXAxisTitleFontColor()
+	 {
+		 return native_getXAxisTitleFontColor(m_NativeChart);
+	 }
+	 
+	 public void setXAxisTitleFontStrikeout(boolean bUse)
+	 {
+		 native_setXAxisTitleFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getXAxisTitleFontStrikeout()
+	 {
+		 return native_getXAxisTitleFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setXAxisTitleFontUnderline(boolean bUse)
+	 {
+		 native_setXAxisTitleFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getXAxisTitleFontUnderline()
+	 {
+		 return native_getXAxisTitleFontUnderline(m_NativeChart);
+	 }
+	 
+	 public void setXAxisFontName(String name)
+	 {
+		 native_setXAxisFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getXAxisFontName()
+	 {
+		 return native_getXAxisFontName(m_NativeChart);
+	 }
+
+	 public void setXAxisFontSize(int nSize)
+	 {
+		 native_setXAxisFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getXAxisFontSize()
+	 {
+		 return native_getXAxisFontSize(m_NativeChart);
+	 }
+
+	 public void setXAxisFontStyle(int nStyle)
+	 {
+		 native_setXAxisFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getXAxisFontStyle()
+	 {
+		 return native_getXAxisFontStyle(m_NativeChart);
+	 }
+	 
+	 public void setXAxisFontColor(int nColor)
+	 {
+		 native_setXAxisFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getXAxisFontColor()
+	 {
+		 return native_getXAxisFontColor(m_NativeChart);
+	 }
+	 
+	 public void setXAxisFontStrikeout(boolean bUse)
+	 {
+		 native_setXAxisFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getXAxisFontStrikeout()
+	 {
+		 return native_getXAxisFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setXAxisFontUnderline(boolean bUse)
+	 {
+		 native_setXAxisFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getXAxisFontUnderline()
+	 {
+		 return native_getXAxisFontUnderline(m_NativeChart);
+	 }
+	 
+	 public void setXAxisTitleBackdropFillStyle(int nStyle)
+	 {
+		 native_setXAxisTitleBackdropFillStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getXAxisTitleBackdropFillStyle()
+	 {
+		 return native_getXAxisTitleBackdropFillStyle(m_NativeChart);
+	 }
+	 public void setXAxisTitleBackdropFillColor(int nColor)
+	 {
+		 native_setXAxisTitleBackdropFillColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getXAxisTitleBackdropFillColor()
+	 {
+		 return native_getXAxisTitleBackdropFillColor(m_NativeChart);
+	 }
+	 
+	 public void setXAxisTitleBackdropFrameStyle(int nStyle)
+	 {
+		 native_setXAxisTitleBackdropFrameStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getXAxisTitleBackdropFrameStyle()
+	 {
+		 return native_getXAxisTitleBackdropFrameStyle(m_NativeChart);
+	 }
+	 public void setXAxisTitleBackdropFrameColor(int nColor)
+	 {
+		 native_setXAxisTitleBackdropFrameColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getXAxisTitleBackdropFrameColor()
+	 {
+		 return native_getXAxisTitleBackdropFrameColor(m_NativeChart);
+	 }
+	 
+	 public void setYAxisVisible(boolean bVisible)
+	 {
+		 native_setYAxisVisible(m_NativeChart, bVisible);
+		 invalidate();
+	 }
+	 public boolean getYAxisVisible()
+	 {
+		 return native_getYAxisVisible(m_NativeChart);
+	 }
+
+	 public void setYAxisTitle(String strTitle)
+	 {
+		 native_setYAxisTitle(m_NativeChart, strTitle);
+		 invalidate();
+	 }
+	 public String getYAxisTitle()
+	 {
+		 return native_getYAxisTitle(m_NativeChart);
+	 }
+	 
+	 public void setYAxisTitleFontName(String name)
+	 {
+		 native_setYAxisTitleFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getYAxisTitleFontName()
+	 {
+		 return native_getYAxisTitleFontName(m_NativeChart);
+	 }
+
+	 public void setYAxisTitleFontSize(int nSize)
+	 {
+		 native_setYAxisTitleFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getYAxisTitleFontSize()
+	 {
+		 return native_getYAxisTitleFontSize(m_NativeChart);
+	 }
+
+	 public void setYAxisTitleFontStyle(int nStyle)
+	 {
+		 native_setYAxisTitleFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getYAxisTitleFontStyle()
+	 {
+		 return native_getYAxisTitleFontStyle(m_NativeChart);
+	 }
+	 
+	 public void setYAxisTitleFontColor(int nColor)
+	 {
+		 native_setYAxisTitleFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getYAxisTitleFontColor()
+	 {
+		 return native_getYAxisTitleFontColor(m_NativeChart);
+	 }
+	 
+	 public void setYAxisTitleFontStrikeout(boolean bUse)
+	 {
+		 native_setYAxisTitleFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getYAxisTitleFontStrikeout()
+	 {
+		 return native_getYAxisTitleFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setYAxisTitleFontUnderline(boolean bUse)
+	 {
+		 native_setYAxisTitleFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getYAxisTitleFontUnderline()
+	 {
+		 return native_getYAxisTitleFontUnderline(m_NativeChart);
+	 }
+
+	 public void setYAxisFontName(String name)
+	 {
+		 native_setYAxisFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getYAxisFontName()
+	 {
+		 return native_getYAxisFontName(m_NativeChart);
+	 }
+
+	 public void setYAxisFontSize(int nSize)
+	 {
+		 native_setYAxisFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getYAxisFontSize()
+	 {
+		 return native_getYAxisFontSize(m_NativeChart);
+	 }
+
+	 public void setYAxisFontStyle(int nStyle)
+	 {
+		 native_setYAxisFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getYAxisFontStyle()
+	 {
+		 return native_getYAxisFontStyle(m_NativeChart);
+	 }
+	 
+	 public void setYAxisFontColor(int nColor)
+	 {
+		 native_setYAxisFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getYAxisFontColor()
+	 {
+		 return native_getYAxisFontColor(m_NativeChart);
+	 }
+	 
+	 public void setYAxisFontStrikeout(boolean bUse)
+	 {
+		 native_setYAxisFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getYAxisFontStrikeout()
+	 {
+		 return native_getYAxisFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setYAxisFontUnderline(boolean bUse)
+	 {
+		 native_setYAxisFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getYAxisFontUnderline()
+	 {
+		 return native_getYAxisFontUnderline(m_NativeChart);
+	 }
+	 
+	 public void setYAxisTitleBackdropFillStyle(int nStyle)
+	 {
+		 native_setYAxisTitleBackdropFillStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getYAxisTitleBackdropFillStyle()
+	 {
+		 return native_getYAxisTitleBackdropFillStyle(m_NativeChart);
+	 }
+	 public void setYAxisTitleBackdropFillColor(int nColor)
+	 {
+		 native_setYAxisTitleBackdropFillColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getYAxisTitleBackdropFillColor()
+	 {
+		 return native_getYAxisTitleBackdropFillColor(m_NativeChart);
+	 }
+	 
+	 public void setYAxisTitleBackdropFrameStyle(int nStyle)
+	 {
+		 native_setYAxisTitleBackdropFrameStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getYAxisTitleBackdropFrameStyle()
+	 {
+		 return native_getYAxisTitleBackdropFrameStyle(m_NativeChart);
+	 }
+	 public void setYAxisTitleBackdropFrameColor(int nColor)
+	 {
+		 native_setYAxisTitleBackdropFrameColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getYAxisTitleBackdropFrameColor()
+	 {
+		 return native_getYAxisTitleBackdropFrameColor(m_NativeChart);
+	 }
+	 
+	 public void setY2AxisVisible(boolean bVisible)
+	 {
+		 native_setY2AxisVisible(m_NativeChart, bVisible);
+		 invalidate();
+	 }
+	 public boolean getY2AxisVisible()
+	 {
+		 return native_getY2AxisVisible(m_NativeChart);
+	 }
+
+	 public void setY2AxisTitle(String strTitle)
+	 {
+		 native_setY2AxisTitle(m_NativeChart, strTitle);
+		 invalidate();
+	 }
+	 public String getY2AxisTitle()
+	 {
+		 return native_getY2AxisTitle(m_NativeChart);
+	 }
+	 
+	 public void setY2AxisTitleFontName(String name)
+	 {
+		 native_setY2AxisTitleFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getY2AxisTitleFontName()
+	 {
+		 return native_getY2AxisTitleFontName(m_NativeChart);
+	 }
+
+	 public void setY2AxisTitleFontSize(int nSize)
+	 {
+		 native_setY2AxisTitleFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getY2AxisTitleFontSize()
+	 {
+		 return native_getY2AxisTitleFontSize(m_NativeChart);
+	 }
+
+	 public void setY2AxisTitleFontStyle(int nStyle)
+	 {
+		 native_setY2AxisTitleFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getY2AxisTitleFontStyle()
+	 {
+		 return native_getY2AxisTitleFontStyle(m_NativeChart);
+	 }
+	 
+	 public void setY2AxisTitleFontColor(int nColor)
+	 {
+		 native_setY2AxisTitleFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getY2AxisTitleFontColor()
+	 {
+		 return native_getY2AxisTitleFontColor(m_NativeChart);
+	 }
+	 
+	 public void setY2AxisTitleFontStrikeout(boolean bUse)
+	 {
+		 native_setY2AxisTitleFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getY2AxisTitleFontStrikeout()
+	 {
+		 return native_getY2AxisTitleFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setY2AxisTitleFontUnderline(boolean bUse)
+	 {
+		 native_setY2AxisTitleFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getY2AxisTitleFontUnderline()
+	 {
+		 return native_getY2AxisTitleFontUnderline(m_NativeChart);
+	 }
+
+	 public void setY2AxisFontName(String name)
+	 {
+		 native_setY2AxisFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getY2AxisFontName()
+	 {
+		 return native_getY2AxisFontName(m_NativeChart);
+	 }
+
+	 public void setY2AxisFontSize(int nSize)
+	 {
+		 native_setY2AxisFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getY2AxisFontSize()
+	 {
+		 return native_getY2AxisFontSize(m_NativeChart);
+	 }
+
+	 public void setY2AxisFontStyle(int nStyle)
+	 {
+		 native_setY2AxisFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getY2AxisFontStyle()
+	 {
+		 return native_getY2AxisFontStyle(m_NativeChart);
+	 }
+	 
+	 public void setY2AxisFontColor(int nColor)
+	 {
+		 native_setY2AxisFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getY2AxisFontColor()
+	 {
+		 return native_getY2AxisFontColor(m_NativeChart);
+	 }
+	 
+	 public void setY2AxisFontStrikeout(boolean bUse)
+	 {
+		 native_setY2AxisFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getY2AxisFontStrikeout()
+	 {
+		 return native_getY2AxisFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setY2AxisFontUnderline(boolean bUse)
+	 {
+		 native_setY2AxisFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getY2AxisFontUnderline()
+	 {
+		 return native_getY2AxisFontUnderline(m_NativeChart);
+	 }
+	 
+	 public void setY2AxisTitleBackdropFillStyle(int nStyle)
+	 {
+		 native_setY2AxisTitleBackdropFillStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getY2AxisTitleBackdropFillStyle()
+	 {
+		 return native_getY2AxisTitleBackdropFillStyle(m_NativeChart);
+	 }
+	 public void setY2AxisTitleBackdropFillColor(int nColor)
+	 {
+		 native_setY2AxisTitleBackdropFillColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getY2AxisTitleBackdropFillColor()
+	 {
+		 return native_getY2AxisTitleBackdropFillColor(m_NativeChart);
+	 }
+	 
+	 public void setY2AxisTitleBackdropFrameStyle(int nStyle)
+	 {
+		 native_setY2AxisTitleBackdropFrameStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getY2AxisTitleBackdropFrameStyle()
+	 {
+		 return native_getY2AxisTitleBackdropFrameStyle(m_NativeChart);
+	 }
+	 public void setY2AxisTitleBackdropFrameColor(int nColor)
+	 {
+		 native_setY2AxisTitleBackdropFrameColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getY2AxisTitleBackdropFrameColor()
+	 {
+		 return native_getY2AxisTitleBackdropFrameColor(m_NativeChart);
+	 }
+	 
+	 public void setZAxisVisible(boolean bVisible)
+	 {
+		 native_setZAxisVisible(m_NativeChart, bVisible);
+		 invalidate();
+	 }
+	 public boolean getZAxisVisible()
+	 {
+		 return native_getZAxisVisible(m_NativeChart);
+	 }
+
+	 public void setZAxisTitle(String strTitle)
+	 {
+		 native_setZAxisTitle(m_NativeChart, strTitle);
+		 invalidate();
+	 }
+	 public String getZAxisTitle()
+	 {
+		 return native_getZAxisTitle(m_NativeChart);
+	 }
+	 
+	 public void setZAxisTitleFontName(String name)
+	 {
+		 native_setZAxisTitleFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getZAxisTitleFontName()
+	 {
+		 return native_getZAxisTitleFontName(m_NativeChart);
+	 }
+
+	 public void setZAxisTitleFontSize(int nSize)
+	 {
+		 native_setZAxisTitleFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getZAxisTitleFontSize()
+	 {
+		 return native_getZAxisTitleFontSize(m_NativeChart);
+	 }
+
+	 public void setZAxisTitleFontStyle(int nStyle)
+	 {
+		 native_setZAxisTitleFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getZAxisTitleFontStyle()
+	 {
+		 return native_getZAxisTitleFontStyle(m_NativeChart);
+	 }
+	 
+	 public void setZAxisTitleFontColor(int nColor)
+	 {
+		 native_setZAxisTitleFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getZAxisTitleFontColor()
+	 {
+		 return native_getZAxisTitleFontColor(m_NativeChart);
+	 }
+	 
+	 public void setZAxisTitleFontStrikeout(boolean bUse)
+	 {
+		 native_setZAxisTitleFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getZAxisTitleFontStrikeout()
+	 {
+		 return native_getZAxisTitleFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setZAxisTitleFontUnderline(boolean bUse)
+	 {
+		 native_setZAxisTitleFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getZAxisTitleFontUnderline()
+	 {
+		 return native_getZAxisTitleFontUnderline(m_NativeChart);
+	 }
+
+	 public void setZAxisFontName(String name)
+	 {
+		 native_setZAxisFontName(m_NativeChart, name);
+		 invalidate();
+	 }
+	 public String getZAxisFontName()
+	 {
+		 return native_getZAxisFontName(m_NativeChart);
+	 }
+
+	 public void setZAxisFontSize(int nSize)
+	 {
+		 native_setZAxisFontSize(m_NativeChart, nSize);
+		 invalidate();
+	 }
+	 public int getZAxisFontSize()
+	 {
+		 return native_getZAxisFontSize(m_NativeChart);
+	 }
+
+	 public void setZAxisFontStyle(int nStyle)
+	 {
+		 native_setZAxisFontStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getZAxisFontStyle()
+	 {
+		 return native_getZAxisFontStyle(m_NativeChart);
+	 }
+	 
+	 public void setZAxisFontColor(int nColor)
+	 {
+		 native_setZAxisFontColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getZAxisFontColor()
+	 {
+		 return native_getZAxisFontColor(m_NativeChart);
+	 }
+	 
+	 public void setZAxisFontStrikeout(boolean bUse)
+	 {
+		 native_setZAxisFontStrikeout(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getZAxisFontStrikeout()
+	 {
+		 return native_getZAxisFontStrikeout(m_NativeChart);
+	 }
+
+	 public void setZAxisFontUnderline(boolean bUse)
+	 {
+		 native_setZAxisFontUnderline(m_NativeChart, bUse);
+		 invalidate();
+	 }
+	 public boolean getZAxisFontUnderline()
+	 {
+		 return native_getZAxisFontUnderline(m_NativeChart);
+	 }
+	 
+	 public void setZAxisTitleBackdropFillStyle(int nStyle)
+	 {
+		 native_setZAxisTitleBackdropFillStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getZAxisTitleBackdropFillStyle()
+	 {
+		 return native_getZAxisTitleBackdropFillStyle(m_NativeChart);
+	 }
+	 public void setZAxisTitleBackdropFillColor(int nColor)
+	 {
+		 native_setZAxisTitleBackdropFillColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getZAxisTitleBackdropFillColor()
+	 {
+		 return native_getZAxisTitleBackdropFillColor(m_NativeChart);
+	 }
+	 
+	 public void setZAxisTitleBackdropFrameStyle(int nStyle)
+	 {
+		 native_setZAxisTitleBackdropFrameStyle(m_NativeChart, nStyle);
+		 invalidate();
+	 }
+	 public int getZAxisTitleBackdropFrameStyle()
+	 {
+		 return native_getZAxisTitleBackdropFrameStyle(m_NativeChart);
+	 }
+	 public void setZAxisTitleBackdropFrameColor(int nColor)
+	 {
+		 native_setZAxisTitleBackdropFrameColor(m_NativeChart, nColor);
+		 invalidate();
+	 }
+	 public int getZAxisTitleBackdropFrameColor()
+	 {
+		 return native_getZAxisTitleBackdropFrameColor(m_NativeChart);
+	 }
+	 
+	 public int getSeriesColCount()
+	 {
+		 return native_getSeriesColCount(m_NativeChart);
+	 }
+	 public int getSeriesRowCount()
+	 {
+		 return native_getSeriesRowCount(m_NativeChart);
+	 }
+
+	 public String getSeriesColLabel(int nCol)
+	 {
+		 return native_getSeriesColLabel(m_NativeChart, nCol);
+	 }
+	 public String getSeriesRowLabel(int nRow)
+	 {
+		 return native_getSeriesRowLabel(m_NativeChart, nRow);
+	 }
+
+	 public void setSeriesDataPointLabelLocation(int nCol, int nRow, int nLocation)
+	 {
+		 native_setSeriesDataPointLabelLocation(m_NativeChart, nCol, nRow, nLocation);
+		 invalidate();
+	 }
+	 public int getSeriesDataPointLabelLocation(int nCol, int nRow)
+	 {
+		 return native_getSeriesDataPointLabelLocation(m_NativeChart, nCol, nRow);
+	 }
+
+	 public void setSeriesDataPointLabelValueFormat(int nCol, int nRow, String stdFormat)
+	 {
+		 native_setSeriesDataPointLabelValueFormat(m_NativeChart, nCol, nRow, stdFormat);
+		 invalidate();
+	 }
+	 public String getSeriesDataPointLabelValueFormat(int nCol, int nRow)
+	 {
+		 return native_getSeriesDataPointLabelValueFormat(m_NativeChart, nCol, nRow);
+	 }
+	 
+	 public void setSeriesDataPointLabelPercentFormat(int nCol, int nRow, String stdFormat)
+	 {
+		 native_setSeriesDataPointLabelPercentFormat(m_NativeChart, nCol, nRow, stdFormat);
+		 invalidate();
+	 }
+	 public String getSeriesDataPointLabelPercentFormat(int nCol, int nRow)
+	 {
+		 return native_getSeriesDataPointLabelPercentFormat(m_NativeChart, nCol, nRow);
+	 }
+
+	 public String getSeriesDataPointFormatList(int nType)
+	 {
+		 return native_getSeriesDataPointFormatList(m_NativeChart, nType);
+	 }
+
+	 public void setSeriesOrder(int nCol, int nOrder)
+	 {
+		 native_setSeriesOrder(m_NativeChart, nCol, nOrder);
+		 invalidate();
+	 }
+	 public int getSeriesOrder(int nCol)
+	 {
+		 return native_getSeriesOrder(m_NativeChart, nCol);
+	 }
+	 
+	 public void setSeriesOptionSeriesHide(int nCol, boolean bHide)
+	 {
+		 native_setSeriesOptionSeriesHide(m_NativeChart, nCol, bHide);
+		 invalidate();
+	 }
+	 public boolean getSeriesOptionSeriesHide(int nCol)
+	 {
+		 return native_getSeriesOptionSeriesHide(m_NativeChart, nCol);
+	 }
+	 
+	 public void setSeriesOptionSeriesExclude(int nCol, boolean bFlag)
+	 {
+		 native_setSeriesOptionSeriesExclude(m_NativeChart, nCol, bFlag);
+		 invalidate();
+	 }
+	 public boolean getSeriesOptionSeriesExclude(int nCol)
+	 {
+		 return native_getSeriesOptionSeriesExclude(m_NativeChart, nCol);
+	 }
+	 
+	 public void setSeriesOptionSeriesMarkersShow(int nCol, boolean bFlag)
+	 {
+		 native_setSeriesOptionSeriesMarkersShow(m_NativeChart, nCol, bFlag);
+		 invalidate();
+	 }
+	 public boolean getSeriesOptionSeriesMarkersShow(int nCol)
+	 {
+		 return native_getSeriesOptionSeriesMarkersShow(m_NativeChart, nCol);
+	 }
+	 
+	 public void setSeriesOptionSeriesAutoMarkers(int nCol, boolean bFlag)
+	 {
+		 native_setSeriesOptionSeriesAutoMarkers(m_NativeChart, nCol, bFlag);
+		 invalidate();
+	 }
+	 public boolean getSeriesOptionSeriesAutoMarkers(int nCol)
+	 {
+		 return native_getSeriesOptionSeriesAutoMarkers(m_NativeChart, nCol);
+	 }
+	 
+	 public void setSeriesOptionSeriesHiLoGainColor(int nCol, int nColor)
+	 {
+		 native_setSeriesOptionSeriesHiLoGainColor(m_NativeChart, nCol, nColor);
+		 invalidate();
+	 }
+	 public int getSeriesOptionSeriesHiLoGainColor(int nCol)
+	 {
+		 return native_getSeriesOptionSeriesHiLoGainColor(m_NativeChart, nCol);
+	 }
+	 
+	 public void setSeriesOptionSeriesHiLoLossColor(int nCol, int nColor)
+	 {
+		 native_setSeriesOptionSeriesHiLoLossColor(m_NativeChart, nCol, nColor);
+		 invalidate();
+	 }
+	 public int getSeriesOptionSeriesHiLoLossColor(int nCol)
+	 {
+		 return native_getSeriesOptionSeriesHiLoLossColor(m_NativeChart, nCol);
+	 }
+
+	 public void setSeriesDatapointLabelTypeValue(int nCol, int nRow, boolean bUse)
+	 {
+		 native_setSeriesDatapointLabelTypeValue(m_NativeChart, nCol, nRow, bUse);
+		 invalidate();
+	 }
+	 public boolean getSeriesDatapointLabelTypeValue(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointLabelTypeValue(m_NativeChart, nCol, nRow);
+	 }
+	 
+	 public void setSeriesDatapointLabelTypePercent(int nCol, int nRow, boolean bUse)
+	 {
+		 native_setSeriesDatapointLabelTypePercent(m_NativeChart, nCol, nRow, bUse);
+		 invalidate();
+	 }
+	 public boolean getSeriesDatapointLabelTypePercent(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointLabelTypePercent(m_NativeChart, nCol, nRow);
+	 }
+	 
+	 public void setSeriesDatapointLabelTypeSeriesName(int nCol, int nRow, boolean bUse)
+	 {
+		 native_setSeriesDatapointLabelTypeSeriesName(m_NativeChart, nCol, nRow, bUse);
+		 invalidate();
+	 }
+	 public boolean getSeriesDatapointLabelTypeSeriesName(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointLabelTypeSeriesName(m_NativeChart, nCol, nRow);
+	 }
+	 
+	 public void setSeriesDatapointLabelTypePointName(int nCol, int nRow, boolean bUse)
+	 {
+		 native_setSeriesDatapointLabelTypePointName(m_NativeChart, nCol, nRow, bUse);
+		 invalidate();
+	 }
+	 public boolean getSeriesDatapointLabelTypePointName(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointLabelTypePointName(m_NativeChart, nCol, nRow);
+	 }
+	 
+	 public boolean setSeriesDatapointFillPattern(int nCol, int nRow, int nStyle, int nPattern)
+	 {
+		 boolean bRe = native_setSeriesDatapointFillPattern(m_NativeChart, nCol, nRow, nStyle, nPattern);
+		 invalidate();
+		 return bRe;
+	 }
+	 public int getSeriesDatapointFillStyle(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointFillStyle(m_NativeChart, nCol, nRow);
+	 }
+	 public int getSeriesDatapointFillPattern(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointFillPattern(m_NativeChart, nCol, nRow);
+	 }
+	 public void setSeriesDatapointFillColor(int nCol, int nRow, int nColor)
+	 {
+		 native_setSeriesDatapointFillColor(m_NativeChart, nCol, nRow, nColor);
+		 invalidate();
+	 }
+	 public int getSeriesDatapointFillColor(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointFillColor(m_NativeChart, nCol, nRow);
+	 }
+	 public void setSeriesDatapointFillPatternColor(int nCol, int nRow, int nColor)
+	 {
+		 native_setSeriesDatapointFillPatternColor(m_NativeChart, nCol, nRow, nColor);
+		 invalidate();
+	 }
+	 public int getSeriesDatapointFillPatternColor(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointFillPatternColor(m_NativeChart, nCol, nRow);
+	 }
+
+	 public void setSeriesDatapointEdgeStyle(int nCol, int nRow, int nStyle)
+	 {
+		 native_setSeriesDatapointEdgeStyle(m_NativeChart, nCol, nRow, nStyle);
+		 invalidate();
+	 }
+	 public int getSeriesDatapointEdgeStyle(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointEdgeStyle(m_NativeChart, nCol, nRow);
+	 }
+	 public void setSeriesDatapointEdgeWidth(int nCol, int nRow, int nWidth)
+	 {
+		 native_setSeriesDatapointEdgeWidth(m_NativeChart, nCol, nRow, nWidth);
+		 invalidate();
+	 }
+	 public int getSeriesDatapointEdgeWidth(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointEdgeWidth(m_NativeChart, nCol, nRow);
+	 }
+	 public void setSeriesDatapointEdgeColor(int nCol, int nRow, int nColor)
+	 {
+		 native_setSeriesDatapointEdgeColor(m_NativeChart, nCol, nRow, nColor);
+		 invalidate();
+	 }
+	 public int getSeriesDatapointEdgeColor(int nCol, int nRow)
+	 {
+		 return native_getSeriesDatapointEdgeColor(m_NativeChart, nCol, nRow);
+	 }
+	 
+	 
 	 
 	 public boolean isAnimation()
 	 {
@@ -784,7 +2094,6 @@ public class Chart extends View {
 		 native_setDataSeriesInRow(m_NativeChart, nPlotBy);
 	 }
 	
-	 // native privat static interface
 	 private static native int		native_init();
 	 private static native void		finalizer(int nativeChart);
 	 private static native int		native_draw(int nativeChart, Bitmap bitmap);
@@ -803,6 +2112,389 @@ public class Chart extends View {
 	 private static native void   	native_setColorTemplate(int nativeChart, int index);
 	 private static native boolean  native_isLegendVisible(int nativeChart);
 	 private static native void   	native_setLegendVisible(int nativeChart, boolean visible);
+	 private static native void		native_setLegendLocation(int nativeChart, int nLocation);
+	 private static native int		native_getLegendLocation(int nativeChart);
+
+	 private static native void		native_setLegendFontName(int nativeChart, String name);
+	 private static native String	native_getLegendFontName(int nativeChart);
+
+	 private static native void		native_setLegendFontSize(int nativeChart, int nSize);
+	 private static native int		native_getLegendFontSize(int nativeChart);
+
+	 private static native void		native_setLegendFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getLegendFontStyle(int nativeChart);
+
+	 private static native void		native_setLegendFontColor(int nativeChart, int nColor);
+	 private static native int		native_getLegendFontColor(int nativeChart);
+
+	 private static native void		native_setLegendFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getLegendFontStrikeout(int nativeChart);
+
+	 private static native void		native_setLegendFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getLegendFontUnderline(int nativeChart);
+
+	 private static native void		native_setLegendBackdropStyle(int nativeChart, int nStyle);
+	 private static native int		native_getLegendBackdropStyle(int nativeChart);
+
+	 private static native int		native_getLegendBackdropColor(int nativeChart);
+	 private static native void		native_setLegendBackdropColor(int nativeChart, int nColor);
+	 
+	 private static native void		native_setLegendPosition(int nativeChart, float fX, float fY, float fWidth, float fHeight);
+	 private static native float	native_getLegendPositionX(int nativeChart);
+	 private static native float	native_getLegendPositionY(int nativeChart);
+	 private static native float	native_getLegendPositionWidth(int nativeChart);
+	 private static native float	native_getLegendPositionHeight(int nativeChart);
+	 
+	 private static native void		native_setLegendBackdropFillStyle(int nativeChart, int nStyle);
+	 private static native int		native_getLegendBackdropFillStyle(int nativeChart);
+	 private static native void		native_setLegendBackdropFillColor(int nativeChart, int nColor);
+	 private static native int		native_getLegendBackdropFillColor(int nativeChart);
+
+	 private static native int      native_getChartBackdropStyle(int nativeChart);
+	 private static native void     native_setChartBackdropStyle(int nativeChart, int nStyle);
+	 private static native int      native_getChartBackdropColor(int nativeChart);
+	 private static native void     native_setChartBackdropColor(int nativeChart, int nColor);
+	 private static native void     native_setChartBackdropPicture(int nativeChart, String strFile);
+	 private static native String   native_getChartBackdropPicture(int nativeChart);
+	 private static native void     native_setChartBackdropPictureDrawStyle(int nativeChart, int nStyle);
+	 private static native int      native_getChartBackdropPictureDrawStyle(int nativeChart);
+	 
+	 private static native void		native_setChartBackdropFillStyle(int nativeChart, int nStyle);
+	 private static native int		native_getChartBackdropFillStyle(int nativeChart);
+	 private static native void		native_setChartBackdropFillColor(int nativeChart, int nColor);
+	 private static native int		native_getChartBackdropFillColor(int nativeChart);
+	 
+	 private static native int      native_getPlotBackdropStyle(int nativeChart);
+	 private static native void     native_setPlotBackdropStyle(int nativeChart, int nStyle);
+	 private static native int      native_getPlotBackdropColor(int nativeChart);
+	 private static native void     native_setPlotBackdropColor(int nativeChart, int nColor);
+	 private static native void     native_setPlotBackdropPicture(int nativeChart, String strFile);
+	 private static native String   native_getPlotBackdropPicture(int nativeChart);
+	 private static native void     native_setPlotBackdropPictureDrawStyle(int nativeChart, int nStyle);
+	 private static native int      native_getPlotBackdropPictureDrawStyle(int nativeChart);
+	 
+	 private static native void		native_setPlotPosition(int nativeChart, float fX, float fY, float fWidth, float fHeight);
+	 private static native float	native_getPlotPositionX(int nativeChart);
+	 private static native float	native_getPlotPositionY(int nativeChart);
+	 private static native float	native_getPlotPositionWidth(int nativeChart);
+	 private static native float	native_getPlotPositionHeight(int nativeChart);
+	 
+	 private static native void		native_setPlotFillStyle(int nativeChart, int nStyle);
+	 private static native int		native_getPlotFillStyle(int nativeChart);
+	 private static native void		native_setPlotFillColor(int nativeChart, int nColor);
+	 private static native int		native_getPlotFillColor(int nativeChart);
+	 
+	 private static native void		native_setTitleText(int nativeChart, String strTitle);
+	 private static native String	native_getTitleText(int nativeChart);
+
+	 private static native void		native_setTitleVisible(int nativeChart, boolean bVisible);
+	 private static native boolean	native_getTitleVisible(int nativeChart);
+
+	 private static native void		native_setTitleLocation(int nativeChart, int nLocation);
+	 private static native int		native_getTitleLocation(int nativeChart);
+
+	 private static native void		native_setTitleFontName(int nativeChart, String name);
+	 private static native String	native_getTitleFontName(int nativeChart);
+
+	 private static native void		native_setTitleFontSize(int nativeChart, int nSize);
+	 private static native int		native_getTitleFontSize(int nativeChart);
+
+	 private static native void		native_setTitleFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getTitleFontStyle(int nativeChart);
+
+	 private static native void		native_setTitleFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getTitleFontStrikeout(int nativeChart);
+
+	 private static native void		native_setTitleFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getTitleFontUnderline(int nativeChart);
+
+	 private static native void		native_setTitleFontColor(int nativeChart, int nColor);
+	 private static native int		native_getTitleFontColor(int nativeChart);
+	 
+	 private static native void		native_setTitleBackdropFillStyle(int nativeChart, int nStyle);
+	 private static native int		native_getTitleBackdropFillStyle(int nativeChart);
+	 private static native void		native_setTitleBackdropFillColor(int nativeChart, int nColor);
+	 private static native int		native_getTitleBackdropFillColor(int nativeChart);
+
+	 private static native void		native_setTitleBackdropFrameStyle(int nativeChart, int nStyle);
+	 private static native int		native_getTitleBackdropFrameStyle(int nativeChart);
+	 private static native void		native_setTitleBackdropFrameColor(int nativeChart, int nColor);
+	 private static native int		native_getTitleBackdropFrameColor(int nativeChart);
+	 
+	 private static native void		native_setXAxisVisible(int nativeChart, boolean bVisible);
+	 private static native boolean	native_getXAxisVisible(int nativeChart);
+
+	 private static native void		native_setXAxisTitle(int nativeChart, String strTitle);
+	 private static native String	native_getXAxisTitle(int nativeChart);
+	 
+	 private static native void		native_setXAxisTitleFontName(int nativeChart, String name);
+	 private static native String	native_getXAxisTitleFontName(int nativeChart);
+
+	 private static native void		native_setXAxisTitleFontSize(int nativeChart, int nSize);
+	 private static native int		native_getXAxisTitleFontSize(int nativeChart);
+
+	 private static native void		native_setXAxisTitleFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getXAxisTitleFontStyle(int nativeChart);
+
+	 private static native void		native_setXAxisTitleFontColor(int nativeChart, int nColor);
+	 private static native int		native_getXAxisTitleFontColor(int nativeChart);
+	 
+	 private static native void		native_setXAxisTitleFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getXAxisTitleFontStrikeout(int nativeChart);
+
+	 private static native void		native_setXAxisTitleFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getXAxisTitleFontUnderline(int nativeChart);
+	 
+	 private static native void		native_setXAxisFontName(int nativeChart, String name);
+	 private static native String	native_getXAxisFontName(int nativeChart);
+
+	 private static native void		native_setXAxisFontSize(int nativeChart, int nSize);
+	 private static native int		native_getXAxisFontSize(int nativeChart);
+
+	 private static native void		native_setXAxisFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getXAxisFontStyle(int nativeChart);
+
+	 private static native void		native_setXAxisFontColor(int nativeChart, int nColor);
+	 private static native int		native_getXAxisFontColor(int nativeChart);
+	 
+	 private static native void		native_setXAxisFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getXAxisFontStrikeout(int nativeChart);
+
+	 private static native void		native_setXAxisFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getXAxisFontUnderline(int nativeChart);
+	 
+	 private static native void		native_setXAxisTitleBackdropFillStyle(int nativeChart, int nStyle);
+	 private static native int		native_getXAxisTitleBackdropFillStyle(int nativeChart);
+	 private static native void		native_setXAxisTitleBackdropFillColor(int nativeChart, int nColorUse);
+	 private static native int		native_getXAxisTitleBackdropFillColor(int nativeChart);
+	 
+	 private static native void		native_setXAxisTitleBackdropFrameStyle(int nativeChart, int nStyle);
+	 private static native int		native_getXAxisTitleBackdropFrameStyle(int nativeChart);
+	 private static native void		native_setXAxisTitleBackdropFrameColor(int nativeChart, int nColorUse);
+	 private static native int		native_getXAxisTitleBackdropFrameColor(int nativeChart);
+	 
+	 private static native void		native_setYAxisVisible(int nativeChart, boolean bVisible);
+	 private static native boolean	native_getYAxisVisible(int nativeChart);
+
+	 private static native void		native_setYAxisTitle(int nativeChart, String strTitle);
+	 private static native String	native_getYAxisTitle(int nativeChart);
+	 
+	 private static native void		native_setYAxisTitleFontName(int nativeChart, String name);
+	 private static native String	native_getYAxisTitleFontName(int nativeChart);
+
+	 private static native void		native_setYAxisTitleFontSize(int nativeChart, int nSize);
+	 private static native int		native_getYAxisTitleFontSize(int nativeChart);
+
+	 private static native void		native_setYAxisTitleFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getYAxisTitleFontStyle(int nativeChart);
+
+	 private static native void		native_setYAxisTitleFontColor(int nativeChart, int nColor);
+	 private static native int		native_getYAxisTitleFontColor(int nativeChart);
+	 
+	 private static native void		native_setYAxisTitleFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getYAxisTitleFontStrikeout(int nativeChart);
+
+	 private static native void		native_setYAxisTitleFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getYAxisTitleFontUnderline(int nativeChart);
+
+	 private static native void		native_setYAxisFontName(int nativeChart, String name);
+	 private static native String	native_getYAxisFontName(int nativeChart);
+
+	 private static native void		native_setYAxisFontSize(int nativeChart, int nSize);
+	 private static native int		native_getYAxisFontSize(int nativeChart);
+
+	 private static native void		native_setYAxisFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getYAxisFontStyle(int nativeChart);
+
+	 private static native void		native_setYAxisFontColor(int nativeChart, int nColor);
+	 private static native int		native_getYAxisFontColor(int nativeChart);
+	 
+	 private static native void		native_setYAxisFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getYAxisFontStrikeout(int nativeChart);
+
+	 private static native void		native_setYAxisFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getYAxisFontUnderline(int nativeChart);
+	 
+	 private static native void		native_setYAxisTitleBackdropFillStyle(int nativeChart, int nStyle);
+	 private static native int		native_getYAxisTitleBackdropFillStyle(int nativeChart);
+	 private static native void		native_setYAxisTitleBackdropFillColor(int nativeChart, int nColorUse);
+	 private static native int		native_getYAxisTitleBackdropFillColor(int nativeChart);
+	 
+	 private static native void		native_setYAxisTitleBackdropFrameStyle(int nativeChart, int nStyle);
+	 private static native int		native_getYAxisTitleBackdropFrameStyle(int nativeChart);
+	 private static native void		native_setYAxisTitleBackdropFrameColor(int nativeChart, int nColorUse);
+	 private static native int		native_getYAxisTitleBackdropFrameColor(int nativeChart);
+	 
+	 private static native void		native_setY2AxisVisible(int nativeChart, boolean bVisible);
+	 private static native boolean	native_getY2AxisVisible(int nativeChart);
+
+	 private static native void		native_setY2AxisTitle(int nativeChart, String strTitle);
+	 private static native String	native_getY2AxisTitle(int nativeChart);
+	 
+	 private static native void		native_setY2AxisTitleFontName(int nativeChart, String name);
+	 private static native String	native_getY2AxisTitleFontName(int nativeChart);
+
+	 private static native void		native_setY2AxisTitleFontSize(int nativeChart, int nSize);
+	 private static native int		native_getY2AxisTitleFontSize(int nativeChart);
+
+	 private static native void		native_setY2AxisTitleFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getY2AxisTitleFontStyle(int nativeChart);
+
+	 private static native void		native_setY2AxisTitleFontColor(int nativeChart, int nColor);
+	 private static native int		native_getY2AxisTitleFontColor(int nativeChart);
+	 
+	 private static native void		native_setY2AxisTitleFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getY2AxisTitleFontStrikeout(int nativeChart);
+
+	 private static native void		native_setY2AxisTitleFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getY2AxisTitleFontUnderline(int nativeChart);
+
+	 private static native void		native_setY2AxisFontName(int nativeChart, String name);
+	 private static native String	native_getY2AxisFontName(int nativeChart);
+
+	 private static native void		native_setY2AxisFontSize(int nativeChart, int nSize);
+	 private static native int		native_getY2AxisFontSize(int nativeChart);
+
+	 private static native void		native_setY2AxisFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getY2AxisFontStyle(int nativeChart);
+
+	 private static native void		native_setY2AxisFontColor(int nativeChart, int nColor);
+	 private static native int		native_getY2AxisFontColor(int nativeChart);
+	 
+	 private static native void		native_setY2AxisFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getY2AxisFontStrikeout(int nativeChart);
+
+	 private static native void		native_setY2AxisFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getY2AxisFontUnderline(int nativeChart);
+	 
+	 private static native void		native_setY2AxisTitleBackdropFillStyle(int nativeChart, int nStyle);
+	 private static native int		native_getY2AxisTitleBackdropFillStyle(int nativeChart);
+	 private static native void		native_setY2AxisTitleBackdropFillColor(int nativeChart, int nColorUse);
+	 private static native int		native_getY2AxisTitleBackdropFillColor(int nativeChart);
+	 
+	 private static native void		native_setY2AxisTitleBackdropFrameStyle(int nativeChart, int nStyle);
+	 private static native int		native_getY2AxisTitleBackdropFrameStyle(int nativeChart);
+	 private static native void		native_setY2AxisTitleBackdropFrameColor(int nativeChart, int nColorUse);
+	 private static native int		native_getY2AxisTitleBackdropFrameColor(int nativeChart);
+	 
+	 private static native void		native_setZAxisVisible(int nativeChart, boolean bVisible);
+	 private static native boolean	native_getZAxisVisible(int nativeChart);
+
+	 private static native void		native_setZAxisTitle(int nativeChart, String strTitle);
+	 private static native String	native_getZAxisTitle(int nativeChart);
+	 
+	 private static native void		native_setZAxisTitleFontName(int nativeChart, String name);
+	 private static native String	native_getZAxisTitleFontName(int nativeChart);
+
+	 private static native void		native_setZAxisTitleFontSize(int nativeChart, int nSize);
+	 private static native int		native_getZAxisTitleFontSize(int nativeChart);
+
+	 private static native void		native_setZAxisTitleFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getZAxisTitleFontStyle(int nativeChart);
+
+	 private static native void		native_setZAxisTitleFontColor(int nativeChart, int nColor);
+	 private static native int		native_getZAxisTitleFontColor(int nativeChart);
+	 
+	 private static native void		native_setZAxisTitleFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getZAxisTitleFontStrikeout(int nativeChart);
+
+	 private static native void		native_setZAxisTitleFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getZAxisTitleFontUnderline(int nativeChart);
+
+	 private static native void		native_setZAxisFontName(int nativeChart, String name);
+	 private static native String	native_getZAxisFontName(int nativeChart);
+
+	 private static native void		native_setZAxisFontSize(int nativeChart, int nSize);
+	 private static native int		native_getZAxisFontSize(int nativeChart);
+
+	 private static native void		native_setZAxisFontStyle(int nativeChart, int nStyle);
+	 private static native int		native_getZAxisFontStyle(int nativeChart);
+
+	 private static native void		native_setZAxisFontColor(int nativeChart, int nColor);
+	 private static native int		native_getZAxisFontColor(int nativeChart);
+	 
+	 private static native void		native_setZAxisFontStrikeout(int nativeChart, boolean bUse);
+	 private static native boolean	native_getZAxisFontStrikeout(int nativeChart);
+
+	 private static native void		native_setZAxisFontUnderline(int nativeChart, boolean bUse);
+	 private static native boolean	native_getZAxisFontUnderline(int nativeChart);
+	 
+	 private static native void		native_setZAxisTitleBackdropFillStyle(int nativeChart, int nStyle);
+	 private static native int		native_getZAxisTitleBackdropFillStyle(int nativeChart);
+	 private static native void		native_setZAxisTitleBackdropFillColor(int nativeChart, int nColorUse);
+	 private static native int		native_getZAxisTitleBackdropFillColor(int nativeChart);
+	 
+	 private static native void		native_setZAxisTitleBackdropFrameStyle(int nativeChart, int nStyle);
+	 private static native int		native_getZAxisTitleBackdropFrameStyle(int nativeChart);
+	 private static native void		native_setZAxisTitleBackdropFrameColor(int nativeChart, int nColorUse);
+	 private static native int		native_getZAxisTitleBackdropFrameColor(int nativeChart);
+	 
+	 private static native int		native_getSeriesColCount(int nativeChart);
+	 private static native int		native_getSeriesRowCount(int nativeChart);
+	
+	 private static native String	native_getSeriesColLabel(int nativeChart, int nCol);
+	 private static native String	native_getSeriesRowLabel(int nativeChart, int nRow);
+	
+	 private static native void		native_setSeriesDataPointLabelLocation(int nativeChart, int nCol, int nRow, int nLocation);
+	 private static native int		native_getSeriesDataPointLabelLocation(int nativeChart, int nCol, int nRow);
+	
+	 private static native void		native_setSeriesDataPointLabelValueFormat(int nativeChart, int nCol, int nRow, String stdFormat);
+	 private static native String	native_getSeriesDataPointLabelValueFormat(int nativeChart, int nCol, int nRow);
+	
+	 private static native void		native_setSeriesDataPointLabelPercentFormat(int nativeChart, int nCol, int nRow, String stdFormat);
+	 private static native String	native_getSeriesDataPointLabelPercentFormat(int nativeChart, int nCol, int nRow);
+
+	 private static native String	native_getSeriesDataPointFormatList(int nativeChart, int nType);
+	
+	 private static native void		native_setSeriesOrder(int nativeChart, int nCol, int nOrder);
+	 private static native int		native_getSeriesOrder(int nativeChart, int nCol);
+	 
+	 private static native void		native_setSeriesOptionSeriesHide(int nativeChart, int nCol, boolean bHide);
+	 private static native boolean	native_getSeriesOptionSeriesHide(int nativeChart, int nCol);
+
+	 private static native void		native_setSeriesOptionSeriesExclude(int nativeChart, int nCol, boolean bFlag);
+	 private static native boolean	native_getSeriesOptionSeriesExclude(int nativeChart, int nCol);
+	 
+	 private static native void		native_setSeriesOptionSeriesMarkersShow(int nativeChart, int nCol, boolean bFlag);
+	 private static native boolean	native_getSeriesOptionSeriesMarkersShow(int nativeChart, int nCol);
+	 
+	 private static native void		native_setSeriesOptionSeriesAutoMarkers(int nativeChart, int nCol, boolean bFlag);
+	 private static native boolean	native_getSeriesOptionSeriesAutoMarkers(int nativeChart, int nCol);
+	 
+	 private static native void		native_setSeriesOptionSeriesHiLoGainColor(int nativeChart, int nCol, int nColor);
+	 private static native int		native_getSeriesOptionSeriesHiLoGainColor(int nativeChart, int nCol);
+	 
+	 private static native void		native_setSeriesOptionSeriesHiLoLossColor(int nativeChart, int nCol, int nColor);
+	 private static native int		native_getSeriesOptionSeriesHiLoLossColor(int nativeChart, int nCol);
+	 
+	 private static native void		native_setSeriesDatapointLabelTypeValue(int nativeChart, int nCol, int nRow, boolean bUse);
+	 private static native boolean	native_getSeriesDatapointLabelTypeValue(int nativeChart, int nCol, int nRow);
+	 
+	 private static native void		native_setSeriesDatapointLabelTypePercent(int nativeChart, int nCol, int nRow, boolean bUse);
+	 private static native boolean	native_getSeriesDatapointLabelTypePercent(int nativeChart, int nCol, int nRow);
+	 
+	 private static native void		native_setSeriesDatapointLabelTypeSeriesName(int nativeChart, int nCol, int nRow, boolean bUse);
+	 private static native boolean	native_getSeriesDatapointLabelTypeSeriesName(int nativeChart, int nCol, int nRow);
+	 
+	 private static native void		native_setSeriesDatapointLabelTypePointName(int nativeChart, int nCol, int nRow, boolean bUse);
+	 private static native boolean	native_getSeriesDatapointLabelTypePointName(int nativeChart, int nCol, int nRow);
+
+	 private static native boolean	native_setSeriesDatapointFillPattern(int nativeChart, int nCol, int nRow, int nStyle, int nPattern);
+	 private static native int		native_getSeriesDatapointFillStyle(int nativeChart, int nCol, int nRow);
+	 private static native int		native_getSeriesDatapointFillPattern(int nativeChart, int nCol, int nRow);
+	 private static native void		native_setSeriesDatapointFillColor(int nativeChart, int nCol, int nRow, int nColor);
+	 private static native int		native_getSeriesDatapointFillColor(int nativeChart, int nCol, int nRow);
+	 private static native void		native_setSeriesDatapointFillPatternColor(int nativeChart, int nCol, int nRow, int nColor);
+	 private static native int		native_getSeriesDatapointFillPatternColor(int nativeChart, int nCol, int nRow);
+
+	 private static native void		native_setSeriesDatapointEdgeStyle(int nativeChart, int nCol, int nRow, int nStyle);
+	 private static native int		native_getSeriesDatapointEdgeStyle(int nativeChart, int nCol, int nRow);
+	 private static native void		native_setSeriesDatapointEdgeWidth(int nativeChart, int nCol, int nRow, int nWidth);
+	 private static native int		native_getSeriesDatapointEdgeWidth(int nativeChart, int nCol, int nRow);
+	 private static native void		native_setSeriesDatapointEdgeColor(int nativeChart, int nCol, int nRow, int nColor);
+	 private static native int		native_getSeriesDatapointEdgeColor(int nativeChart, int nCol, int nRow);
+
+	    
 	 private static native Value	native_getValue(int nativeChart, int row, int column);
 	 private static native void		native_setValue(int nativeChart, int row, int column, Value value);
 	 private static native String	native_getRowLabel(int nativeChart, int row, int column);
@@ -824,7 +2516,6 @@ public class Chart extends View {
 	 private static native void		native_setYAxisMaximum(int nativeChart, boolean bAllowMaximum, double dMax);
 	 private static native void		native_setDataSeriesInRow(int nativeChart, int nPlotBy);
 	 
-	 // native public interface
 	 public native float	getRotation();
 	 public native void		setRotation(float degree);
 	 public native float	getElevation();

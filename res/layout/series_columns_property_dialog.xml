@@ -1,0 +1,413 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeriesColumnsPropertyDialog" >
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_columns_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffe8e8e8" >
+           
+		<TextView
+			android:id="@+id/text_series_columns_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:text="@string/chart_series"
+			android:layout_marginLeft="10dip"
+			android:layout_marginTop="2dip"
+			android:textColor="#33b5e5"
+			android:textStyle="bold"
+			android:textAppearance="?android:attr/textAppearanceSmall" />
+	
+		<Button
+			android:id="@+id/button_series_columns_sperator1"
+			android:layout_width="match_parent"
+			android:layout_height="2dip"
+			android:layout_below="@+id/text_series_columns_title"
+			android:background="#33b5e5"
+			android:layout_marginTop="2dip" />
+	
+	</RelativeLayout>
+     
+    
+	<RelativeLayout
+        android:id="@+id/relative_layout_series_columns_property"
+        android:layout_width="150dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_layout_series_columns_title"
+        android:background="#ffe8e8e8" >
+		
+    <ScrollView
+    	android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dip" >
+		
+         <RadioGroup
+            android:id="@+id/radio_series_columns_property"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:checkedButton="@+id/series_columns_property_type"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/series_columns_property_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_options" />
+<!-- 
+            <RadioButton
+                android:id="@+id/series_columns_property_lines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_lines" />
+            
+            <RadioButton
+                android:id="@+id/series_columns_property_guidelines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_guidelines" />
+            
+            <RadioButton
+                android:id="@+id/series_columns_property_datapoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_datapoint" />
+ -->           
+            <RadioButton
+                android:id="@+id/series_columns_property_datapointlabels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_series_datapointlabels" />
+ 
+        </RadioGroup>
+
+	</RelativeLayout>
+    </ScrollView>
+	</RelativeLayout>
+	            
+	
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_columns_property_options"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_columns_title"
+        android:layout_toRightOf="@+id/relative_layout_series_columns_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+    
+			<RelativeLayout
+		        android:id="@+id/relative_layout_series_columns_property_options_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+         
+	            <TextView
+	                android:id="@+id/text_series_columns_property_options_hideseries"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_property_series_options_hideseries"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+				<CheckBox
+	                android:id="@+id/checkbox_series_columns_property_options_hideseries"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignTop="@+id/text_series_columns_property_options_hideseries"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="200dip"
+	                android:text=""
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+				
+	            <TextView
+	                android:id="@+id/text_series_columns_property_options_excludeseries"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:layout_below="@+id/text_series_columns_property_options_hideseries"
+		            android:text="@string/chart_property_series_options_excludeseries"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+				<CheckBox
+	                android:id="@+id/checkbox_series_columns_property_options_excludeseries"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignTop="@+id/text_series_columns_property_options_excludeseries"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="200dip"
+	                android:text=""
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+				
+	            <TextView
+	                android:visibility="invisible"
+	                android:id="@+id/text_series_columns_property_options_ploton"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:layout_below="@+id/text_series_columns_property_options_excludeseries"
+		            android:text="@string/chart_property_series_options_ploton"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+				<CheckBox
+				    android:visibility="invisible"
+	                android:id="@+id/checkbox_series_columns_property_options_ploton"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignTop="@+id/text_series_columns_property_options_ploton"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="200dip"
+	                android:text=""
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+				
+	            <TextView
+	                android:visibility="invisible"
+	                android:id="@+id/text_series_columns_property_options_showmarkers"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:layout_below="@+id/text_series_columns_property_options_ploton"
+		            android:text="@string/chart_property_series_options_showmarkers"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+				<CheckBox
+				    android:visibility="invisible"
+	                android:id="@+id/checkbox_series_columns_property_options_showmarkers"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignTop="@+id/text_series_columns_property_options_showmarkers"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="200dip"
+	                android:text=""
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+				
+	            <TextView
+	                android:visibility="invisible"
+	                android:id="@+id/text_series_columns_property_options_automarkers"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:layout_below="@+id/text_series_columns_property_options_showmarkers"
+		            android:text="@string/chart_property_series_options_automarkers"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+				<CheckBox
+				    android:visibility="invisible"
+	                android:id="@+id/checkbox_series_columns_property_options_automarkers"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignTop="@+id/text_series_columns_property_options_automarkers"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="200dip"
+	                android:text=""
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+			    
+		        <Button
+		            android:visibility="invisible"
+					android:id="@+id/button_series_columns_property_options_sperator1"
+					android:layout_width="match_parent"
+					android:layout_height="2dip"
+					android:layout_below="@+id/text_series_columns_property_options_automarkers"
+					android:layout_marginLeft="-10dip"
+					android:layout_marginTop="10dip" />
+		        
+		        <TextView
+		            android:visibility="invisible"
+		            android:id="@+id/text_series_columns_property_options_hiloclose"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dip"
+		            android:text="@string/chart_property_series_options_hiloclose"
+		            android:layout_below="@+id/button_series_columns_property_options_sperator1"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		        
+	            <TextView
+	                android:visibility="invisible"
+	                android:id="@+id/text_series_columns_property_options_gaincolor"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:layout_marginLeft="10dip"
+		            android:text="@string/chart_property_series_options_gaincolor"
+		            android:layout_below="@+id/text_series_columns_property_options_hiloclose"
+		            android:background="#00FF0000"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <Button
+                    android:visibility="invisible"
+					android:id="@+id/button_series_columns_property_options_gaincolor_preview"
+					android:layout_width="30dip"
+					android:layout_height="30dip"
+	                android:layout_alignTop="@+id/text_series_columns_property_options_gaincolor"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="200dip"
+					android:text="" />
+                
+	            <TextView
+	                android:visibility="invisible"
+	                android:id="@+id/text_series_columns_property_options_losscolor"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dip"
+		            android:layout_marginLeft="10dip"
+		            android:text="@string/chart_property_series_options_losscolor"
+		            android:layout_below="@+id/text_series_columns_property_options_gaincolor"
+		            android:background="#00FF0000"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <Button
+                    android:visibility="invisible"
+					android:id="@+id/button_series_columns_property_options_losscolor_preview"
+					android:layout_width="30dip"
+					android:layout_height="30dip"
+	                android:layout_alignTop="@+id/text_series_columns_property_options_losscolor"
+	                android:layout_marginTop="-3dip"
+	                android:layout_marginLeft="200dip"
+					android:text="" />
+		        
+		    </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_columns_property_lines"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_columns_title"
+        android:layout_toRightOf="@+id/relative_layout_series_columns_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+			
+			<RelativeLayout
+		        android:id="@+id/relative_layout_series_columns_property_lines_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+         
+			    
+			    
+		    </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_columns_property_guidelines"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_columns_title"
+        android:layout_toRightOf="@+id/relative_layout_series_columns_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+            
+		    <RelativeLayout
+		        android:id="@+id/relative_layout_series_columns_property_guidelines_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+
+		        
+	            
+        	</RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_columns_property_datapoint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_columns_title"
+        android:layout_toRightOf="@+id/relative_layout_series_columns_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+            
+		    <RelativeLayout
+		        android:id="@+id/relative_layout_series_columns_property_datapoint_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+
+		        
+	            
+        	</RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_columns_property_datapointlabels"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_columns_title"
+        android:layout_toRightOf="@+id/relative_layout_series_columns_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+            
+		    <RelativeLayout
+		        android:id="@+id/relative_layout_series_columns_property_datapointlabels_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+
+				<TextView
+	                android:id="@+id/text_series_columns_property_datapointlabels_row"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_property_series_datapointlabels_rows"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+			    	            
+				<ListView
+			        android:id="@+id/listview_series_columns_property_datapointlabels_row"
+			        android:layout_width="fill_parent"
+			        android:layout_height="300dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="100dip"
+			        android:layout_below="@+id/text_series_columns_property_datapointlabels_row"
+			        android:transcriptMode="alwaysScroll" >
+			    </ListView>
+			    
+				<Button
+					android:id="@+id/button_series_columns_property_datapointlabels_row_property"
+					android:layout_width="80dip"
+					android:layout_height="40dip"
+	                android:layout_marginTop="10dip"
+	                android:layout_marginLeft="10dip"
+					android:layout_below="@+id/listview_series_columns_property_datapointlabels_row"
+					android:text="@string/chart_property"
+					android:textAppearance="?android:attr/textAppearanceSmall" />	
+	            
+        	</RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+    
+    
+</RelativeLayout>

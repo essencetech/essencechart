@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeriesRowsPropertyDialog" >
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_rows_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffe8e8e8" >
+           
+		<TextView
+			android:id="@+id/text_series_rows_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:text="@string/chart_series"
+			android:layout_marginLeft="10dip"
+			android:layout_marginTop="2dip"
+			android:textColor="#33b5e5"
+			android:textStyle="bold"
+			android:textAppearance="?android:attr/textAppearanceSmall" />
+	
+		<Button
+			android:id="@+id/button_series_rows_sperator1"
+			android:layout_width="match_parent"
+			android:layout_height="2dip"
+			android:layout_below="@+id/text_series_rows_title"
+			android:background="#33b5e5"
+			android:layout_marginTop="2dip" />
+	
+	</RelativeLayout>
+     
+    
+	<RelativeLayout
+        android:id="@+id/relative_layout_series_rows_property"
+        android:layout_width="150dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_layout_series_rows_title"
+        android:background="#ffe8e8e8" >
+		
+    <ScrollView
+    	android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dip" >
+		
+         <RadioGroup
+            android:id="@+id/radio_series_rows_property"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:checkedButton="@+id/series_rows_property_type"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/series_rows_property_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_location" />
+
+            <RadioButton
+                android:id="@+id/series_rows_property_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_property_font" />
+            
+            <RadioButton
+                android:id="@+id/series_rows_property_columns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_backdrop_property_frame" />
+        </RadioGroup>
+
+	</RelativeLayout>
+    </ScrollView>
+	</RelativeLayout>
+	            
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_rows_property_type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_rows_title"
+        android:layout_toRightOf="@+id/relative_layout_series_rows_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+    
+			<RelativeLayout
+		        android:id="@+id/relative_layout_series_rows_property_type_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+         
+			    
+			    
+		    </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_rows_property_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_rows_title"
+        android:layout_toRightOf="@+id/relative_layout_series_rows_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+			
+			<RelativeLayout
+		        android:id="@+id/relative_layout_series_rows_property_order_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+         
+			    
+			    
+		    </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/relative_layout_series_rows_property_columns"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_layout_series_rows_title"
+        android:layout_toRightOf="@+id/relative_layout_series_rows_property"
+        android:background="#ffe8e8e8"
+        android:visibility="invisible" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="20dip">
+            
+		    <RelativeLayout
+		        android:id="@+id/relative_layout_series_rows_property_columns_sub"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" >
+
+		        
+	            
+        	</RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+</RelativeLayout>

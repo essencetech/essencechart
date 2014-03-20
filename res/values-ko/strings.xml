@@ -99,11 +99,182 @@
     <string name="chart_color_template_30">스타일-30</string>
     <string name="chart_color_template_31">스타일-31</string>
     <string name="chart_color_template_32">스타일-32</string> 
+    <string name="chart_title">제목</string>
     <string name="chart_legend">범례</string>   
     <string name="chart_type">종류</string>
     <string name="chart_style">스타일</string>
     <string name="chart_animation">애니메이션</string>
     <string name="chart_animation_loop">반복</string>
     <string name="chart_data_queue">데이터 큐</string>
+    <string name="chart_backdrop">차트</string>
+    <string name="chart_plotbackdrop">차트 영역</string>
+    <string name="chart_xaxis">X축</string>
+    <string name="chart_yaxis">Y축</string>
+    <string name="chart_y2axis">Y2축</string>
+    <string name="chart_zaxis">Z축</string>
+    <string name="chart_series">데이터</string>
+    
+    <string name="chart_property">속성</string>
+    <string name="chart_title_property">제목 속성</string>
+    <string name="chart_legend_property">범례 속성</string>
+    <string name="chart_backdrop_property">차트 속성</string>
+    <string name="chart_plotbackdrop_property">차트 영역 속성</string>
+    <string name="chart_xaxis_title_property">X축 제목 속성</string>
+    <string name="chart_yaxis_title_property">Y축 제목 속성</string>
+    <string name="chart_zaxis_title_property">Z축 제목 속성</string>
+    <string name="chart_series_property">데이터 속성</string>
+    
+    <string name="chart_property_title">제목 입력</string>
+    <string name="chart_property_location">위치</string>
+    <string name="chart_property_font">글꼴</string>
+    <string name="chart_property_apply">적용</string>
+    <string name="chart_property_ok">확인</string>
+    <string name="chart_property_cancel">취소</string>
+    <string name="chart_title_fileopen">파일 열기</string>
+    
+    <string name="chart_property_location_topleft">왼쪽 위</string>
+    <string name="chart_property_location_top">위쪽</string>
+    <string name="chart_property_location_topright">오른쪽 위</string>
+    <string name="chart_property_location_left">왼쪽</string>
+    <string name="chart_property_location_right">오른쪽</string>
+    <string name="chart_property_location_bottomleft">왼쪽 아래</string>
+    <string name="chart_property_location_bottom">아래쪽</string>
+    <string name="chart_property_location_bottomright">오른쪽 아래</string>
+    
+    
+    <string name="chart_property_font_type">타입</string>
+    <string name="chart_property_font_type_sans">Sans</string>
+    <string name="chart_property_font_type_serif">Serif</string>
+    <string name="chart_property_font_type_monospace">Monospace</string>
+    
+    <string name="chart_property_font_style">스타일</string>
+    <string name="chart_property_font_style_regular">보통</string>
+    <string name="chart_property_font_style_bold">굵게</string>
+    <string name="chart_property_font_style_italic">기울임</string>
+    <string name="chart_property_font_style_bolditalic">굵게 기울임</string>
+    
+    <string name="chart_property_font_size">크기</string>
+    <string name="chart_property_font_size_8">크기 8</string>
+    <string name="chart_property_font_size_10">크기 10</string>
+    <string name="chart_property_font_size_12">크기 12</string>
+    <string name="chart_property_font_size_20">크기 20</string>
+    <string name="chart_property_font_size_24">크기 24</string>
+    <string name="chart_property_font_size_30">크기 30</string>
+    
+    <string name="chart_property_font_strikeout">취소선</string>
+    <string name="chart_property_font_underline">밑줄</string>
+    
+    <string name="chart_property_font_color">색</string>
+    
+    <string name="chart_backdrop_property_frame">테두리</string>
+    <string name="chart_backdrop_property_frame_style">종류</string>
+    <string name="chart_property_backdropframe_style_null">없음</string>
+    <string name="chart_property_backdropframe_style_singleline">단일선</string>
+    <string name="chart_property_backdropframe_style_doubleline">이중선</string>
+    <string name="chart_property_backdropframe_style_thickinner">내부 굵은 이중선</string>
+    <string name="chart_property_backdropframe_style_thickouter">외부 굵은 이중선</string>
 
+    <string name="chart_backdrop_property_picture">이미지</string>
+    <string name="chart_property_picture_file">파일</string>
+    <string name="chart_property_picture_clear">초기화</string>
+    <string name="chart_property_picture_drawstyle">위치</string>
+    <string name="chart_property_picture_drawstyle_actulsize">가운데</string>
+    <string name="chart_property_picture_drawstyle_fullsize">채우기</string>
+    <string name="chart_property_picture_drawstyle_fitsize">맞춤</string>
+    <string name="chart_property_picture_drawstyle_stretch">늘리기</string>
+    <string name="chart_property_picture_drawstyle_tiled">바둑판식 배열</string>
+    
+    
+    <string name="chart_property_series_type">축 종류</string>
+    <string name="chart_property_series_order">축 순서</string>
+    <string name="chart_property_series_columns">열 데이터</string>
+    
+    <string name="chart_property_series_allcolumns">모든 열 데이터</string>
+    <string name="chart_property_series_column">세로축</string>
+    <string name="chart_property_series_column_bar">막대형</string>
+    <string name="chart_property_series_column_hilobar">Hi Lo Bar</string>
+    <string name="chart_property_series_column_up">위로</string>
+    <string name="chart_property_series_column_down">아래로</string>
+    <string name="chart_property_series_column_stack">쌓기</string>
+    <string name="chart_property_series_column_unstack">쌓기 해제</string>
+    
+    <string name="chart_property_series_column_property">열 데이터 속성</string>
+    
+    <string name="chart_property_series_options">옵션</string>
+    <string name="chart_property_series_lines">표시 선</string>
+    <string name="chart_property_series_guidelines">테두리 선</string>
+    <string name="chart_property_series_datapoint">데이터</string>
+    <string name="chart_property_series_datapointlabels">행 데이터</string>
+    
+    <string name="chart_property_series_options_hideseries">열 데이터 숨기기</string>
+    <string name="chart_property_series_options_excludeseries">열 데이터 제외하기</string>
+    <string name="chart_property_series_options_ploton">Plot On 2nd Y axis</string>
+    <string name="chart_property_series_options_showmarkers">마크 보이기</string>
+    <string name="chart_property_series_options_automarkers">자동 마크</string>
+    <string name="chart_property_series_options_hiloclose">Hi Lo Close</string>
+    <string name="chart_property_series_options_gaincolor">Gain Color</string>
+    <string name="chart_property_series_options_losscolor">Loss Color</string>
+    
+    <string name="chart_property_series_datapointlabels_rows">행 데이터</string>
+    <string name="chart_property_series_datapointlabels_allrows">모든 행 데이터</string>
+    <string name="chart_property_series_datapoint_property">행 데이터 속성</string>
+    
+    
+    <string name="chart_property_series_datapointlabels_apperance">보이기</string>
+    <string name="chart_property_series_datapointlabels_fill">채우기</string>
+    <string name="chart_property_series_datapointlabels_valueformat">데이터 형식</string>
+    <string name="chart_property_series_datapointlabels_percentformat">백분율 형식</string>
+    <string name="chart_property_series_datapointlabels_font">글꼴</string>
+    
+    <string name="chart_property_series_datapointlabels_apperance_textloaction">위치</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_none">숨김</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_above">위</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_below">아래</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_center">가운데</string>
+    <string name="chart_property_series_datapointlabels_apperance_textloaction_base">바닥</string>
+    
+    <string name="chart_property_series_datapointlabels_apperance_label">데이터 레이블</string>
+    <string name="chart_property_series_datapointlabels_apperance_label_value">데이터 값</string>
+    <string name="chart_property_series_datapointlabels_apperance_label_percent">백분율</string>
+    <string name="chart_property_series_datapointlabels_apperance_label_seriesname">열 데이터 이름</string>
+    <string name="chart_property_series_datapointlabels_apperance_label_pointname">행 데이터 이름</string>
+
+    <string name="chart_property_series_datapointlabels_apperance_linestyle">레이블 연결선</string>
+    <string name="chart_property_series_datapointlabels_apperance_linestyle_none">숨김</string>
+    <string name="chart_property_series_datapointlabels_apperance_linestyle_angle">꺽은선</string>
+    <string name="chart_property_series_datapointlabels_apperance_linestyle_straight">직선</string>
+    
+    <string name="chart_property_series_datapointlabels_valueformat_general">일반</string>
+    <string name="chart_property_series_datapointlabels_valueformat_number">숫자</string>
+    <string name="chart_property_series_datapointlabels_valueformat_currency">통화</string>
+    <string name="chart_property_series_datapointlabels_valueformat_date">날짜</string>
+    <string name="chart_property_series_datapointlabels_valueformat_time">시간</string>
+    <string name="chart_property_series_datapointlabels_valueformat_percentage">백분율</string>
+    <string name="chart_property_series_datapointlabels_valueformat_fraction">분수</string>
+    <string name="chart_property_series_datapointlabels_valueformat_scientific">지수</string>
+    
+    <string name="chart_property_series_datapointlabels_fill_fill">채우기</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern">무늬</string>
+    <string name="chart_property_series_datapointlabels_fill_fillcolor">채우기 색</string>
+    <string name="chart_property_series_datapointlabels_fill_patterncolor">무늬 색</string>
+    <string name="chart_property_series_datapointlabels_fill_edge">테두리</string>
+    <string name="chart_property_series_datapointlabels_fill_edgestyle">테두리 스타일</string>
+    <string name="chart_property_series_datapointlabels_fill_edgewidth">테두리 너비</string>
+    <string name="chart_property_series_datapointlabels_fill_edgecolor">테두리 색</string>
+    
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_none">없음</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_solid">단색</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_pattern2">굵은 가로줄</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_pattern3">굵은 세로줄</string>
+    <string name="chart_property_series_datapointlabels_fill_fillpattern_pattern4">체크</string>
+    
+    <string name="chart_property_series_datapointlabels_fill_edgestyle_none">없음</string>
+    <string name="chart_property_series_datapointlabels_fill_edgestyle_solid">실선</string>
+
+    <string name="chart_property_series_datapointlabels_fill_edgewidth_1">1 Point</string>
+    <string name="chart_property_series_datapointlabels_fill_edgewidth_2">2 Point</string>
+    <string name="chart_property_series_datapointlabels_fill_edgewidth_3">3 Point</string>
+    <string name="chart_property_series_datapointlabels_fill_edgewidth_4">4 Point</string>
+    
+    
 </resources>

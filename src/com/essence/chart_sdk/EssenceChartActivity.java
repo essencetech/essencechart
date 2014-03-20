@@ -15,7 +15,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,13 +35,16 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.Switch;
+import android.view.Gravity;
 
 import com.essence.chart.Chart;
 import com.essence.chart.ChartCallback;
 import com.essence.chart.GridData;
 
+import java.util.Map;
+import java.util.HashMap;
+
 public class EssenceChartActivity extends Activity implements View.OnClickListener, OnCheckedChangeListener {
-	private int			m_nOSVersion = 0;
 	private	Chart		m_Chart = null;
 	private	String		m_Version = "unknown";
 	private	float		m_fChartZoom = 1.0f;
@@ -56,16 +58,56 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 	private SeekBar		m_SeekBarChartRotateY = null;
 	private SeekBar		m_SeekBarChartRotateZ = null;
 	private SeekBar		m_SeekBarChartAlpha = null;
+	private CheckBox	m_CheckBoxChartXAxis = null;
+	private CheckBox	m_CheckBoxChartYAxis = null;
+	private CheckBox	m_CheckBoxChartY2Axis = null;
+	private CheckBox	m_CheckBoxChartZAxis = null;
+	private CheckBox	m_CheckBoxChartTitle = null;
 	private CheckBox	m_CheckBoxChartLegend = null;
 	private CheckBox	m_CheckBoxChartAnimation = null;
 	private CheckBox	m_CheckBoxChartAnimationLoop = null;
 	private CheckBox	m_CheckBoxChartDataQueue = null;
+	private	Switch		m_SwitchChartXAxis = null;
+	private	Switch		m_SwitchChartYAxis = null;
+	private	Switch		m_SwitchChartY2Axis = null;
+	private	Switch		m_SwitchChartZAxis = null;
+	private	Switch		m_SwitchChartTitle = null;
 	private	Switch		m_SwitchChartLegend = null;
 	private	Switch		m_SwitchChartAnimation = null;
 	private	Switch		m_SwitchChartAnimationLoop = null;
 	private Switch 		m_SwitchChartDataQueue = null;
 	private ChartSeekBarListener			m_ChartSeekBarListener = null;
 	private ChartCheckBoxListener			m_ChartCheckBoxListener = null;
+	private Button		m_ButtonChartPropertyTitle = null;
+	private Button		m_ButtonChartPropertyLegend = null;
+	private Button		m_ButtonChartPropertyBackdrop = null;
+	private Button		m_ButtonChartPropertyPlotBackdrop = null;
+	private Button		m_ButtonChartPropertyXAxis = null;
+	private Button		m_ButtonChartPropertyYAxis = null;
+	private Button		m_ButtonChartPropertyY2Axis = null;
+	private Button		m_ButtonChartPropertyZAxis = null;
+	private Button		m_ButtonSeriesProperty = null;
+	
+	public ChartProperty m_DlgChartProperty = null;
+	public SeriesProperty m_DlgSeriesProperty = null;
+	
+	public class ApplyAxisPerChartStyle
+	{
+		public ApplyAxisPerChartStyle(boolean x, boolean y, boolean y2, boolean z)
+		{
+			X = x;
+			Y = y;
+			Y2 = y2;
+			Z = z;
+		}
+
+		public boolean X;
+		public boolean Y;
+		public boolean Y2;
+		public boolean Z;
+	}
+	
+	Map<String, ApplyAxisPerChartStyle> m_mapApplyAxisPerChartStyle = new HashMap<String, ApplyAxisPerChartStyle>();
 	private ChartSeekBarListenerCallback	m_ChartSeekBarListenerCallback = new ChartSeekBarListenerCallback()
 	{
 
@@ -109,13 +151,11 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 
 		@Override
 		public void onStartTrackingTouch(SeekBar seekBar) {
-			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
 		public void onStopTrackingTouch(SeekBar seekBar) {
-			// TODO Auto-generated method stub
 			
 		}
 	};
@@ -132,8 +172,30 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 
 			int nID = buttonView.getId();
 
-			if (nID == R.id.checkbox_chart_legend || nID == R.id.switch_chart_legend) {
+			if (nID == R.id.checkbox_chart_xaxis || nID == R.id.switch_chart_xaxis) {
+				m_Chart.setXAxisVisible(isChecked);
+				m_ButtonChartPropertyXAxis.setEnabled(isChecked);
+			}
+			else if (nID == R.id.checkbox_chart_yaxis || nID == R.id.switch_chart_yaxis) {
+				m_Chart.setYAxisVisible(isChecked);
+				m_ButtonChartPropertyYAxis.setEnabled(isChecked);
+			}
+			else if (nID == R.id.checkbox_chart_y2axis || nID == R.id.switch_chart_y2axis) {
+				m_Chart.setY2AxisVisible(isChecked);
+				m_ButtonChartPropertyY2Axis.setEnabled(isChecked);
+			}
+			else if (nID == R.id.checkbox_chart_zaxis || nID == R.id.switch_chart_zaxis) {
+				m_Chart.setZAxisVisible(isChecked);
+				m_ButtonChartPropertyZAxis.setEnabled(isChecked);
+			}
+			else if (nID == R.id.checkbox_chart_title || nID == R.id.switch_chart_title) {
+				m_Chart.setTitleVisible(isChecked);
+				
+				m_ButtonChartPropertyTitle.setEnabled(isChecked);
+			}
+			else if (nID == R.id.checkbox_chart_legend || nID == R.id.switch_chart_legend) {
 				m_Chart.setLegendVisible(isChecked);
+				m_ButtonChartPropertyLegend.setEnabled(isChecked);
 			}
 			else if (nID == R.id.switch_chart_animation
 					|| nID == R.id.switch_chart_animation_loop
@@ -226,13 +288,12 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 				}
 			}
 			
-			m_Chart.pushData(gridData, -1); //-1 is default duration
+			m_Chart.pushData(gridData, -1);
 			
 			m_lOldTick = time;
 		}
 	}
 	
-	// rotation 정보 가져오기
 	public int getRotation()
 	{
 		WindowManager	windowManager = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
@@ -243,7 +304,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		return nRotation;
 	}
 	
-	// 화면 가로/세로 정보 가져오기
 	public int	getOrientation() {
 		WindowManager	windowManager = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
 		Display 		display = windowManager.getDefaultDisplay();
@@ -251,7 +311,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		
 		display.getMetrics(displayMetrics);
 		
-		// width가 height 보다 크면 LANDSCAPE
 		if (displayMetrics.widthPixels > displayMetrics.heightPixels)
 		{
 			return Configuration.ORIENTATION_LANDSCAPE;
@@ -284,7 +343,7 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		}
 		
 		int							nOrientation = getOrientation();
-		int							nTopBarHeight = window.findViewById(Window.ID_ANDROID_CONTENT).getTop(); //상태바와 타이틀바의 높이 총합입니다.
+		int							nTopBarHeight = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
 		DisplayMetrics				displayMetrics = getDisplayMetrics();
 		int							nViewWidth = 0;
 		int							nViewHeight = 0;
@@ -307,7 +366,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 			layoutParamsWindowManager.x = (nViewHeight - layoutParamsChart.height) / 2;
 			layoutParamsWindowManager.y = (nViewHeight - layoutParamsChart.height) / 2;
 			
-			// chart layout 변경
 			{
 				ViewGroup.MarginLayoutParams layout_position = new ViewGroup.MarginLayoutParams(m_Chart.getLayoutParams());
 				
@@ -316,7 +374,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 				m_Chart.setLayoutParams(new RelativeLayout.LayoutParams(layout_position));
 			}
 			
-			// chart 조정 메뉴 layout 조정
 			{
 				ViewGroup.MarginLayoutParams layout_position = new ViewGroup.MarginLayoutParams(scrollViewChartAdjustment.getLayoutParams());
 				layout_position.setMargins(nViewHeight, 0 , 0, 0);
@@ -333,7 +390,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 			layoutParamsWindowManager.x = (nViewWidth - layoutParamsChart.width) / 2;
 			layoutParamsWindowManager.y = (nViewWidth - layoutParamsChart.width) / 2;
 			
-			// chart layout 변경
 			{
 				ViewGroup.MarginLayoutParams layout_position = new ViewGroup.MarginLayoutParams(m_Chart.getLayoutParams());
 				
@@ -343,7 +399,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 			}
 			
 			
-			// chart 조정 메뉴 layout 조정
 			{
 				ViewGroup.MarginLayoutParams layout_position = new ViewGroup.MarginLayoutParams(scrollViewChartAdjustment.getLayoutParams());
 				layout_position.setMargins(0, nViewWidth, 0, 0);
@@ -351,7 +406,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 			}
 		}
 		
-		// Chart 종류, style layout 조정
 		{
 			RelativeLayout relativeLayoutChartType = (RelativeLayout)findViewById(R.id.relative_layout_chart_type);
 			RelativeLayout relativeLayoutChartColorTemplate = (RelativeLayout)findViewById(R.id.relative_layout_chart_color_template);
@@ -362,7 +416,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 				return false;
 			}
 			
-			// Chart 종류, style layout 조정
 			if (relativeLayoutChartType.getVisibility() == View.VISIBLE)
 			{
 				ViewGroup.MarginLayoutParams marginLayoutParamsChartType = new ViewGroup.MarginLayoutParams(marginLayoutParamsChartAdjustment);
@@ -371,7 +424,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 				relativeLayoutChartType.setLayoutParams(new RelativeLayout.LayoutParams(marginLayoutParamsChartType));
 			}
 			
-			// Chart style layout 조정
 			if (relativeLayoutChartColorTemplate.getVisibility() == View.VISIBLE)
 			{
 				ViewGroup.MarginLayoutParams marginLayoutParamsChartColorTemplate = new ViewGroup.MarginLayoutParams(marginLayoutParamsChartAdjustment);
@@ -1007,20 +1059,63 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		return Chart.Chart_Type_Unknown;
 	}
 	
+	public void InitApplyAxisPerChartStyle()
+	{
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Clustered_Column),							new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Stacked_Column),							new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_100percent_Stacked_Column),					new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_3D_Column),									new ApplyAxisPerChartStyle(true, true, true, true));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Stacked_Column_in_3D),						new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_100percent_Stacked_Column_in_3D),			new ApplyAxisPerChartStyle(true, true, true, false));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Line),										new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Stacked_Line),								new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Line_with_Markets),							new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_3D_Line),									new ApplyAxisPerChartStyle(true, true, true, true));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Pie),										new ApplyAxisPerChartStyle(false, false, false, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Exploded_Pie),								new ApplyAxisPerChartStyle(false, false, false, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_3D_Pie),									new ApplyAxisPerChartStyle(false, false, false, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Exploded_pie_in_3D),						new ApplyAxisPerChartStyle(false, false, false, false));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Clustered_Bar),								new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Stacked_Bar),								new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_100percent_Stacked_Bar),					new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Clustered_Bar_in_3D),						new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Stacked_Bar_in_3D),							new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_100percent_Stacked_Bar_in_3D),				new ApplyAxisPerChartStyle(true, true, true, false));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Area),										new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_100percent_Stacked_Area),					new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_3D_Area),									new ApplyAxisPerChartStyle(true, true, true, true));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_100percent_Stacked_Area_in_3D),				new ApplyAxisPerChartStyle(true, true, true, false));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Scatter_with_only_Markers),					new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Scatter_with_Straight_Lines_and_Markers),	new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Scatter_with_Straight_Lines),				new ApplyAxisPerChartStyle(true, true, true, false));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_High_Low_Close),							new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Open_High_Low_Close),						new ApplyAxisPerChartStyle(true, true, true, false));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Contour),									new ApplyAxisPerChartStyle(true, false, false, true));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_3D_Surface),								new ApplyAxisPerChartStyle(true, true, true, true));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_3D_Dougnut),								new ApplyAxisPerChartStyle(false, false, false, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Exploded_Dougnut_in_3D),					new ApplyAxisPerChartStyle(false, false, false, false));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Bubble),									new ApplyAxisPerChartStyle(true, true, true, false));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Radar),										new ApplyAxisPerChartStyle(false, false, false, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Radar_with_Markers),						new ApplyAxisPerChartStyle(false, false, false, false));
+		
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_Combine),									new ApplyAxisPerChartStyle(true, true, true, false));
+		m_mapApplyAxisPerChartStyle.put(getChartNameByType(Chart.Chart_Type_3D_Combine),								new ApplyAxisPerChartStyle(true, true, true, true));
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		m_nOSVersion = android.os.Build.VERSION.SDK_INT;
 		setContentView(R.layout.main);
-		if (m_nOSVersion < 14) {
-//			// Android 4.0(ICS) under
-//			setContentView(R.layout.main);
-		}
-		else {
-//			// Android 4.0(ICS) over
-//			setContentView(R.layout.main_api_14);
-		}
 
 		try {
 			PackageInfo i = getPackageManager().getPackageInfo(getPackageName(), 0);
@@ -1038,10 +1133,20 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		m_SeekBarChartRotateY = (SeekBar)findViewById(R.id.seekbar_chart_rotate_y);
 		m_SeekBarChartRotateZ = (SeekBar)findViewById(R.id.seekbar_chart_rotate_z);
 		m_SeekBarChartAlpha = (SeekBar)findViewById(R.id.seekbar_chart_alpha);
+		m_CheckBoxChartXAxis = (CheckBox)findViewById(R.id.checkbox_chart_xaxis);
+		m_CheckBoxChartYAxis = (CheckBox)findViewById(R.id.checkbox_chart_yaxis);
+		m_CheckBoxChartY2Axis = (CheckBox)findViewById(R.id.checkbox_chart_y2axis);
+		m_CheckBoxChartZAxis = (CheckBox)findViewById(R.id.checkbox_chart_zaxis);
+		m_CheckBoxChartTitle = (CheckBox)findViewById(R.id.checkbox_chart_title);
 		m_CheckBoxChartLegend = (CheckBox)findViewById(R.id.checkbox_chart_legend);
 		m_CheckBoxChartAnimation = (CheckBox)findViewById(R.id.checkbox_chart_animation);
 		m_CheckBoxChartAnimationLoop = (CheckBox)findViewById(R.id.checkbox_chart_animation_loop);
 		m_CheckBoxChartDataQueue = (CheckBox)findViewById(R.id.checkbox_chart_data_queue);
+		m_SwitchChartXAxis = (Switch)findViewById(R.id.switch_chart_xaxis);
+		m_SwitchChartYAxis = (Switch)findViewById(R.id.switch_chart_yaxis);
+		m_SwitchChartY2Axis = (Switch)findViewById(R.id.switch_chart_y2axis);
+		m_SwitchChartZAxis = (Switch)findViewById(R.id.switch_chart_zaxis);
+		m_SwitchChartTitle = (Switch)findViewById(R.id.switch_chart_title);
 		m_SwitchChartLegend = (Switch)findViewById(R.id.switch_chart_legend);
 		m_SwitchChartAnimation = (Switch)findViewById(R.id.switch_chart_animation);
 		m_SwitchChartAnimationLoop = (Switch)findViewById(R.id.switch_chart_animation_loop);
@@ -1049,6 +1154,40 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		m_ChartSeekBarListener = new ChartSeekBarListener(m_ChartSeekBarListenerCallback);
 		m_ChartCheckBoxListener = new ChartCheckBoxListener(m_ChartCheckBoxListenerCallback);
 		
+		m_ButtonChartPropertyTitle = (Button)findViewById(R.id.button_chart_property_title);
+		m_ButtonChartPropertyTitle.setOnClickListener(this);
+
+		m_ButtonChartPropertyLegend = (Button)findViewById(R.id.button_chart_property_legend);
+		m_ButtonChartPropertyLegend.setOnClickListener(this);
+		
+		m_ButtonChartPropertyBackdrop = (Button)findViewById(R.id.button_chart_property_backdrop);
+		m_ButtonChartPropertyBackdrop.setOnClickListener(this);
+		
+		m_ButtonChartPropertyPlotBackdrop = (Button)findViewById(R.id.button_chart_property_plotbackdrop);
+		m_ButtonChartPropertyPlotBackdrop.setOnClickListener(this);
+		
+		m_ButtonChartPropertyXAxis = (Button)findViewById(R.id.button_chart_property_xaxis);
+		m_ButtonChartPropertyXAxis.setOnClickListener(this);
+		
+		m_ButtonChartPropertyYAxis = (Button)findViewById(R.id.button_chart_property_yaxis);
+		m_ButtonChartPropertyYAxis .setOnClickListener(this);
+		
+		m_ButtonChartPropertyY2Axis = (Button)findViewById(R.id.button_chart_property_y2axis);
+		m_ButtonChartPropertyY2Axis .setOnClickListener(this);
+		
+		m_ButtonChartPropertyZAxis = (Button)findViewById(R.id.button_chart_property_zaxis);
+		m_ButtonChartPropertyZAxis .setOnClickListener(this);
+
+		m_ButtonSeriesProperty = (Button)findViewById(R.id.button_chart_property_series);
+		m_ButtonSeriesProperty.setOnClickListener(this);
+
+		
+		m_DlgChartProperty = new ChartProperty(this, m_Chart);
+		m_DlgChartProperty.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		m_DlgChartProperty.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+		m_DlgSeriesProperty = new SeriesProperty(this, m_Chart);
+		m_DlgSeriesProperty.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		m_DlgSeriesProperty.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 		
 		if (m_Chart == null 
 			|| m_ButtonChartType == null
@@ -1059,9 +1198,20 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 			|| m_SeekBarChartRotateZ == null
 			|| m_SeekBarChartAlpha == null
 			|| m_ChartSeekBarListener == null
+			|| (m_CheckBoxChartXAxis == null && m_SwitchChartXAxis == null)
+			|| (m_CheckBoxChartYAxis == null && m_SwitchChartYAxis == null)
+			|| (m_CheckBoxChartY2Axis == null && m_SwitchChartY2Axis == null)
+			|| (m_CheckBoxChartZAxis == null && m_SwitchChartZAxis == null)
+			|| (m_CheckBoxChartTitle == null && m_SwitchChartTitle == null)
 			|| (m_CheckBoxChartLegend == null && m_SwitchChartLegend == null)
 			|| (m_SwitchChartAnimation == null && m_SwitchChartAnimationLoop == null && m_CheckBoxChartAnimation == null && m_CheckBoxChartAnimationLoop == null)
-			|| (m_SwitchChartDataQueue == null && m_CheckBoxChartDataQueue == null))
+			|| (m_SwitchChartDataQueue == null && m_CheckBoxChartDataQueue == null)
+			|| m_ButtonChartPropertyTitle == null
+			|| m_ButtonChartPropertyLegend == null
+			|| m_ButtonChartPropertyBackdrop == null
+			|| m_ButtonChartPropertyPlotBackdrop == null
+			|| m_DlgChartProperty == null
+			|| m_DlgSeriesProperty == null)
 		{
 			return;
 		}
@@ -1098,10 +1248,45 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		m_SeekBarChartRotateY.setProgress((int)(m_Chart.getElevation() + 90.0f));
 		m_SeekBarChartRotateZ.setProgress((int)((m_Chart.getPerspective() * 100.0f) - 50.0f));
 		m_SeekBarChartAlpha.setProgress(m_Chart.getChartAlpha());
+		
+		if (m_CheckBoxChartXAxis != null)
+		{
+			m_CheckBoxChartXAxis.setChecked(m_Chart.getXAxisVisible());
+			m_CheckBoxChartXAxis.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyXAxis.setEnabled(m_CheckBoxChartXAxis.isChecked());
+		}
+		if (m_CheckBoxChartYAxis != null)
+		{
+			m_CheckBoxChartYAxis.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyYAxis.setEnabled(m_CheckBoxChartYAxis.isChecked());
+		}
+		if (m_CheckBoxChartY2Axis != null)
+		{
+			m_CheckBoxChartY2Axis.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyY2Axis.setEnabled(m_CheckBoxChartY2Axis.isChecked());
+		}
+		if (m_CheckBoxChartZAxis != null)
+		{
+			m_CheckBoxChartZAxis.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyZAxis.setEnabled(m_CheckBoxChartZAxis.isChecked());
+		}
+		if (m_CheckBoxChartTitle != null)
+		{
+			m_CheckBoxChartTitle.setChecked(m_Chart.getTitleVisible());
+			m_CheckBoxChartTitle.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyTitle.setEnabled(m_CheckBoxChartTitle.isChecked());
+		}
 		if (m_CheckBoxChartLegend != null)
 		{
 			m_CheckBoxChartLegend.setChecked(m_Chart.isLegendVisible());
 			m_CheckBoxChartLegend.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyLegend.setEnabled(m_CheckBoxChartLegend.isChecked());
 		}
 		if (m_CheckBoxChartAnimation != null)
 		{
@@ -1115,10 +1300,47 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		{
 			m_CheckBoxChartDataQueue.setOnCheckedChangeListener(m_ChartCheckBoxListener);
 		}
+		if (m_SwitchChartXAxis != null)
+		{
+			m_SwitchChartXAxis.setChecked(m_Chart.getXAxisVisible());
+			m_SwitchChartXAxis.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyXAxis.setEnabled(m_SwitchChartXAxis.isChecked());
+		}
+		if (m_SwitchChartYAxis != null)
+		{
+			m_SwitchChartYAxis.setChecked(m_Chart.getYAxisVisible());
+			m_SwitchChartYAxis.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyYAxis.setEnabled(m_SwitchChartYAxis.isChecked());
+		}
+		if (m_SwitchChartY2Axis != null)
+		{
+			m_SwitchChartY2Axis.setChecked(m_Chart.getY2AxisVisible());
+			m_SwitchChartY2Axis.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyY2Axis.setEnabled(m_SwitchChartY2Axis.isChecked());
+		}
+		if (m_SwitchChartZAxis != null)
+		{
+			m_SwitchChartZAxis.setChecked(m_Chart.getZAxisVisible());
+			m_SwitchChartZAxis.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyZAxis.setEnabled(m_SwitchChartZAxis.isChecked());
+		}
+		if (m_SwitchChartTitle != null)
+		{
+			m_SwitchChartTitle.setChecked(m_Chart.getTitleVisible());
+			m_SwitchChartTitle.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyTitle.setEnabled(m_SwitchChartTitle.isChecked());
+		}
 		if (m_SwitchChartLegend != null)
 		{
 			m_SwitchChartLegend.setChecked(m_Chart.isLegendVisible());
 			m_SwitchChartLegend.setOnCheckedChangeListener(m_ChartCheckBoxListener);
+			
+			m_ButtonChartPropertyLegend.setEnabled(m_SwitchChartLegend.isChecked());
 		}
 		if (m_SwitchChartAnimation != null)
 		{
@@ -1143,19 +1365,56 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		
 		m_Random = new Random();
 		mHandler.sendEmptyMessage(1);
+		
+		InitApplyAxisPerChartStyle();
+
+		ApplyAxisPerChartStyle apply = (ApplyAxisPerChartStyle)m_mapApplyAxisPerChartStyle.get(getChartNameByType(m_Chart.getChartType()));
+		
+		if (null != m_CheckBoxChartXAxis) {
+			m_CheckBoxChartXAxis.setChecked(apply.X);
+			m_CheckBoxChartXAxis.setEnabled(apply.X);
+		}
+		if (null != m_SwitchChartXAxis) {
+			m_SwitchChartXAxis.setChecked(apply.X);
+			m_SwitchChartXAxis.setEnabled(apply.X);
+		}
+
+		if (null != m_CheckBoxChartYAxis) {
+			m_CheckBoxChartYAxis.setChecked(apply.Y);
+			m_CheckBoxChartYAxis.setEnabled(apply.Y);
+		}
+		if (null != m_SwitchChartYAxis) {
+			m_SwitchChartYAxis.setChecked(apply.Y);
+			m_SwitchChartYAxis.setEnabled(apply.Y);
+		}
+		
+		if (null != m_CheckBoxChartY2Axis) {
+			m_CheckBoxChartY2Axis.setChecked(apply.Y2);
+			m_CheckBoxChartY2Axis.setEnabled(apply.Y2);
+		}
+		if (null != m_SwitchChartY2Axis) {
+			m_SwitchChartY2Axis.setChecked(apply.Y2);
+			m_SwitchChartY2Axis.setEnabled(apply.Y2);
+		}
+		
+		if (null != m_CheckBoxChartZAxis) {
+			m_CheckBoxChartZAxis.setChecked(apply.Z);
+			m_CheckBoxChartZAxis.setEnabled(apply.Z);
+		}
+		if (null != m_SwitchChartZAxis) {
+			m_SwitchChartZAxis.setChecked(apply.Z);
+			m_SwitchChartZAxis.setEnabled(apply.Z);
+		}
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-		// TODO Auto-generated method stub
-		
 		int	nItemID = item.getItemId();
 		if (nItemID == R.id.menu_about)	{
 			AlertDialog.Builder aboutDialogBuilder = new AlertDialog.Builder(this);
@@ -1170,7 +1429,6 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 					}).setNegativeButton(getString(R.string.button_close),
 							new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int id) {
-							// Action for 'NO' Button
 							dialog.cancel();
 						}
 					});
@@ -1187,16 +1445,14 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
-		
-		//int nOrientation = getOrientation();
-		//Log.d("Orientation", "Orientation, 화면 방향 : " + (nOrientation == Configuration.ORIENTATION_LANDSCAPE ? "가로" : "세로"));
 
 		updateChild();
+		
+		repositionPropertyDialog();
 	}
 
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
-		// TODO Auto-generated method stub
 		super.onWindowFocusChanged(hasFocus);
 		
 		updateChild();
@@ -1240,6 +1496,25 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		{
 			toggleSlideMenuView(R.id.relative_layout_chart_color_template);
 		}
+		else if (nID == R.id.button_chart_property_xaxis ||
+				nID == R.id.button_chart_property_yaxis ||
+				nID == R.id.button_chart_property_y2axis ||
+				nID == R.id.button_chart_property_zaxis ||
+				nID == R.id.button_chart_property_title ||
+				nID == R.id.button_chart_property_legend ||
+				nID == R.id.button_chart_property_backdrop ||
+				nID == R.id.button_chart_property_plotbackdrop)
+		{
+			m_DlgChartProperty.show();
+			repositionPropertyDialog();
+			m_DlgChartProperty.SetPropertyType(nID);
+		}
+		else if (nID == R.id.button_chart_property_series)
+		{
+			m_DlgSeriesProperty.show();
+			repositionPropertyDialog();
+			m_DlgSeriesProperty.SetPropertyType(nID);
+		}
 		else
 		{
 			hideShideMenuView();
@@ -1273,6 +1548,44 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 			toogleEnableAnimationButton();
 			updateAnimationButton();
 			
+			ApplyAxisPerChartStyle apply = (ApplyAxisPerChartStyle)m_mapApplyAxisPerChartStyle.get(getChartNameByType(nChartType));
+			
+			if (null != m_CheckBoxChartXAxis) {
+				m_CheckBoxChartXAxis.setChecked(apply.X);
+				m_CheckBoxChartXAxis.setEnabled(apply.X);
+			}
+			if (null != m_SwitchChartXAxis) {
+				m_SwitchChartXAxis.setChecked(apply.X);
+				m_SwitchChartXAxis.setEnabled(apply.X);
+			}
+
+			if (null != m_CheckBoxChartYAxis) {
+				m_CheckBoxChartYAxis.setChecked(apply.Y);
+				m_CheckBoxChartYAxis.setEnabled(apply.Y);
+			}
+			if (null != m_SwitchChartYAxis) {
+				m_SwitchChartYAxis.setChecked(apply.Y);
+				m_SwitchChartYAxis.setEnabled(apply.Y);
+			}
+			
+			if (null != m_CheckBoxChartY2Axis) {
+				m_CheckBoxChartY2Axis.setChecked(apply.Y2);
+				m_CheckBoxChartY2Axis.setEnabled(apply.Y2);
+			}
+			if (null != m_SwitchChartY2Axis) {
+				m_SwitchChartY2Axis.setChecked(apply.Y2);
+				m_SwitchChartY2Axis.setEnabled(apply.Y2);
+			}
+			
+			if (null != m_CheckBoxChartZAxis) {
+				m_CheckBoxChartZAxis.setChecked(apply.Z);
+				m_CheckBoxChartZAxis.setEnabled(apply.Z);
+			}
+			if (null != m_SwitchChartZAxis) {
+				m_SwitchChartZAxis.setChecked(apply.Z);
+				m_SwitchChartZAxis.setEnabled(apply.Z);
+			}
+			
 			if (nChartType == Chart.Chart_Type_Combine)
 			 {
 				m_Chart.setSeriesType(0, Chart.Chart_Type_Line_with_Markets);
@@ -1287,11 +1600,11 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 				 m_Chart.setSeriesType(2, Chart.Chart_Type_3D_Area);
 			 }
 			
-			if (nChartType == Chart.Chart_Type_Line || nChartType == Chart.Chart_Type_Line_with_Markets) //for DataQueue
+			if (nChartType == Chart.Chart_Type_Line || nChartType == Chart.Chart_Type_Line_with_Markets)
 			 {
 				 m_Chart.setYAxisMaximum(true, 2000);
 			 }
-			 else if (nChartType == Chart.Chart_Type_Stacked_Line) //for DataQueue
+			 else if (nChartType == Chart.Chart_Type_Stacked_Line)
 			 {
 				 m_Chart.setYAxisMaximum(true, 6000);
 			 }
@@ -1303,4 +1616,93 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 			
 		m_Chart.invalidate();
 	}
+	
+	protected void repositionPropertyDialog()
+	{
+		Window	window = getWindow();
+		if (window == null)
+		{
+			return;
+		}
+		
+		int nOrientation = getOrientation();
+		int nTopBarHeight = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
+		DisplayMetrics displayMetrics = getDisplayMetrics();
+		
+		int nViewWidth = 0;
+		int nViewHeight = 0;
+		nViewWidth = displayMetrics.widthPixels;
+		nViewHeight = displayMetrics.heightPixels - nTopBarHeight;
+		
+		ViewGroup.LayoutParams paramChart = m_Chart.getLayoutParams();
+		WindowManager.LayoutParams paramChartProperty = m_DlgChartProperty.getWindow().getAttributes();
+		WindowManager.LayoutParams paramSeriesProperty = m_DlgSeriesProperty.getWindow().getAttributes();
+		
+		if (nOrientation == Configuration.ORIENTATION_LANDSCAPE)
+		{
+			paramChartProperty.width = nViewWidth - paramChart.width + 100;
+			paramChartProperty.height = paramChart.height + 100;
+			m_DlgChartProperty.getWindow().setAttributes(paramChartProperty);
+			m_DlgChartProperty.getWindow().setGravity(Gravity.RIGHT|Gravity.BOTTOM);
+			
+			paramSeriesProperty.width = nViewWidth - paramChart.width + 100;
+			paramSeriesProperty.height = paramChart.height + 100;
+			m_DlgSeriesProperty.getWindow().setAttributes(paramSeriesProperty);
+			m_DlgSeriesProperty.getWindow().setGravity(Gravity.RIGHT|Gravity.BOTTOM);
+			
+			if (null != m_DlgSeriesProperty.m_DlgSeriesColumnsProperty)
+			{
+				WindowManager.LayoutParams paramSeriesColumnsProperty = m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.getWindow().getAttributes();
+				
+				paramSeriesColumnsProperty.width = nViewWidth - paramChart.width + 100;
+				paramSeriesColumnsProperty.height = paramChart.height + 100;
+				m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.getWindow().setAttributes(paramSeriesColumnsProperty);
+				m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.getWindow().setGravity(Gravity.RIGHT|Gravity.BOTTOM);
+			}
+
+			if (null != m_DlgSeriesProperty.m_DlgSeriesColumnsProperty &&
+					null != m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.m_DlgSeriesDatapointLabelsProperty)
+			{
+				WindowManager.LayoutParams paramSeriesColumnsDatapointLableProperty = m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.m_DlgSeriesDatapointLabelsProperty.getWindow().getAttributes();
+				
+				paramSeriesColumnsDatapointLableProperty.width = nViewWidth - paramChart.width + 100;
+				paramSeriesColumnsDatapointLableProperty.height = paramChart.height + 100;
+				m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.m_DlgSeriesDatapointLabelsProperty.getWindow().setAttributes(paramSeriesColumnsDatapointLableProperty);
+				m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.m_DlgSeriesDatapointLabelsProperty.getWindow().setGravity(Gravity.RIGHT|Gravity.BOTTOM);
+			}
+		}
+		else
+		{
+			paramChartProperty.width = paramChart.width + 100;
+			paramChartProperty.height = nViewHeight - paramChart.height + 100;
+			m_DlgChartProperty.getWindow().setAttributes(paramChartProperty);
+			m_DlgChartProperty.getWindow().setGravity(Gravity.LEFT|Gravity.BOTTOM);
+			
+			paramSeriesProperty.width = paramChart.width + 100;
+			paramSeriesProperty.height = nViewHeight - paramChart.height + 100;
+			m_DlgSeriesProperty.getWindow().setAttributes(paramSeriesProperty);
+			m_DlgSeriesProperty.getWindow().setGravity(Gravity.LEFT|Gravity.BOTTOM);
+			
+			if (null != m_DlgSeriesProperty.m_DlgSeriesColumnsProperty)
+			{
+				WindowManager.LayoutParams paramSeriesColumnsProperty = m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.getWindow().getAttributes();
+				paramSeriesColumnsProperty.width = paramChart.width + 100;
+				paramSeriesColumnsProperty.height = nViewHeight - paramChart.height + 100;
+				m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.getWindow().setAttributes(paramSeriesColumnsProperty);
+				m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.getWindow().setGravity(Gravity.LEFT|Gravity.BOTTOM);
+			}
+			
+			if (null != m_DlgSeriesProperty.m_DlgSeriesColumnsProperty &&
+					null != m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.m_DlgSeriesDatapointLabelsProperty)
+			{
+				WindowManager.LayoutParams paramSeriesColumnsDatapointLableProperty = m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.m_DlgSeriesDatapointLabelsProperty.getWindow().getAttributes();
+				
+				paramSeriesColumnsDatapointLableProperty.width = paramChart.width + 100;
+				paramSeriesColumnsDatapointLableProperty.height = nViewHeight - paramChart.height + 100;
+				m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.m_DlgSeriesDatapointLabelsProperty.getWindow().setAttributes(paramSeriesColumnsDatapointLableProperty);
+				m_DlgSeriesProperty.m_DlgSeriesColumnsProperty.m_DlgSeriesDatapointLabelsProperty.getWindow().setGravity(Gravity.LEFT|Gravity.BOTTOM);
+			}
+		}
+	}
+
 }

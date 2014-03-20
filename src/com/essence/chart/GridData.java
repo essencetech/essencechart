@@ -56,7 +56,6 @@ public class GridData {
 	        for (int i = 0; i < m_nRows; i++)
 	        {
 	        	m_Rows[i] = new Row(m_nColumns);
-//	            m_Rows[i].setSize(m_nColumns);
 	        }
 	    }
 	}
