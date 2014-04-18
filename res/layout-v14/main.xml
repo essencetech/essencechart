@@ -1126,6 +1126,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/chart_color_template_32" />
+                
+                <RadioButton
+		            android:id="@+id/chart_color_template_33"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_color_template_33" />
+                
+		        <RadioButton
+		            android:id="@+id/chart_color_template_34"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_color_template_34" />
+		        
+		        <RadioButton
+		            android:id="@+id/chart_color_template_35"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/chart_color_template_35" />
             </RadioGroup>
         </ScrollView>
     </RelativeLayout>

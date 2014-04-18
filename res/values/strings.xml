@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Essence Chart SDK</string>
-    <string name="blogger_url">http://essenceware.blogspot.com</string>
+    <string name="blogger_url">Blogger : http://essenceware.blogspot.com</string>
     <string name="button_visit_blogger">Visit blogger</string>
     <string name="button_close">Close</string>
     <string name="menu_about">About</string>
@@ -99,6 +99,9 @@
     <string name="chart_color_template_30">Style-30</string>
     <string name="chart_color_template_31">Style-31</string>
     <string name="chart_color_template_32">Style-32</string>
+    <string name="chart_color_template_33">Style-33</string>
+    <string name="chart_color_template_34">Style-34(Old Default)</string>
+    <string name="chart_color_template_35">Style-35</string>
     <string name="chart_title">Title</string>
     <string name="chart_legend">Legend</string>
     <string name="chart_type">Type</string>
@@ -276,5 +279,6 @@
     <string name="chart_property_series_datapointlabels_fill_edgewidth_3">3 Point</string>
     <string name="chart_property_series_datapointlabels_fill_edgewidth_4">4 Point</string>
     
+    <string name="icon_url">Icon : http://www.visualpharm.com</string>
     
 </resources>

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">에센스 차트 SDK</string>
-    <string name="blogger_url">http://essenceware.blogspot.com</string>
+    <string name="blogger_url">블로그 : http://essenceware.blogspot.com</string>
     <string name="button_visit_blogger">블로그 방문</string>
     <string name="button_close">닫기</string>
     <string name="menu_about">정보</string>
@@ -98,7 +98,10 @@
     <string name="chart_color_template_29">스타일-29</string>
     <string name="chart_color_template_30">스타일-30</string>
     <string name="chart_color_template_31">스타일-31</string>
-    <string name="chart_color_template_32">스타일-32</string> 
+    <string name="chart_color_template_32">스타일-32</string>
+    <string name="chart_color_template_33">스타일-33</string>
+    <string name="chart_color_template_34">스타일-34(이전 기본값)</string> 
+    <string name="chart_color_template_35">스타일-35</string>
     <string name="chart_title">제목</string>
     <string name="chart_legend">범례</string>   
     <string name="chart_type">종류</string>
@@ -276,5 +279,6 @@
     <string name="chart_property_series_datapointlabels_fill_edgewidth_3">3 Point</string>
     <string name="chart_property_series_datapointlabels_fill_edgewidth_4">4 Point</string>
     
+    <string name="icon_url">아이콘 : http://www.visualpharm.com</string>
     
 </resources>

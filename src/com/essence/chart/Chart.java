@@ -11,8 +11,9 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class Chart extends View {
+	static private	ChartLibrary		m_Library = new ChartLibrary();
+	
 	public	int					m_NativeChart;
-	private	ChartLibrary		m_Library = null;
 	private	ChartCallback		m_Callback = null;
 	private	Bitmap				m_Bitmap = null;
 	private	Random				m_Random = null;
@@ -98,7 +99,6 @@ public class Chart extends View {
 	public Chart(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		
-		m_Library = new ChartLibrary();
 		m_NativeChart = native_init();
 		m_Bitmap = Bitmap.createBitmap(m_nChartWidth, m_nChartHeight, Bitmap.Config.ARGB_8888);
 		m_Random = new Random();
@@ -106,12 +106,13 @@ public class Chart extends View {
 		m_fElevation = getElevation();
 		
 		setChartType(Chart_Type_3D_Column);
+		
+		setCertificationKeyByTag();
 	}
 
 	public Chart(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
-		m_Library = new ChartLibrary();
 		m_NativeChart = native_init();
 		m_Bitmap = Bitmap.createBitmap(m_nChartWidth, m_nChartHeight, Bitmap.Config.ARGB_8888);
 		m_Random = new Random();
@@ -119,20 +120,64 @@ public class Chart extends View {
 		m_fElevation = getElevation();
 		
 		setChartType(Chart_Type_3D_Column);
+		
+		setCertificationKeyByTag();
 	}
 
 	public Chart(Context context) {
 		super(context);
 
-		m_Library = new ChartLibrary();
 		m_NativeChart = native_init();
 		m_Bitmap = Bitmap.createBitmap(m_nChartWidth, m_nChartHeight, Bitmap.Config.ARGB_8888);
 		m_Random = new Random();
 		m_fRotate = getRotation();
 		m_fElevation = getElevation();
 		
+		
 		setChartType(Chart_Type_3D_Column);
+		
+		setCertificationKeyByTag();
 	}
+	
+	public static void setCertificationKey(String strCertificationKey)
+	{
+		if (m_Library == null)
+		{
+			m_Library = new ChartLibrary();
+		}
+		native_setCertificationKey(strCertificationKey);
+	}
+	
+	private void setCertificationKeyByTag()
+	{
+		try	{
+			String strTag = (String)getTag();
+			if (strTag == null || strTag.isEmpty()) {
+				return;
+			}
+			
+			String[] arrayTag = strTag.split(",");
+			if (arrayTag == null || arrayTag.length < 1) {
+				return;
+			}
+			
+			for(int i = 0; i < arrayTag.length; i++)
+			{
+				String[] arrayAttribute = arrayTag[i].split(":");
+				if (arrayAttribute != null && arrayAttribute.length > 1) {
+					if (arrayAttribute[0].equals("essenceChart_certificationKey")) {
+						setCertificationKey(arrayAttribute[1]);
+
+						return;
+					}
+				}
+			}
+		}
+		catch(Exception e) {
+			
+		}
+	}
+	
 	
 	private void TestInputData_00()
 	{
@@ -2515,6 +2560,7 @@ public class Chart extends View {
 	 private static native boolean	native_pushData(int nativeChart, GridData gridData, int nCanvasWidth, int nCanvasHeight, int nDuration);
 	 private static native void		native_setYAxisMaximum(int nativeChart, boolean bAllowMaximum, double dMax);
 	 private static native void		native_setDataSeriesInRow(int nativeChart, int nPlotBy);
+	 private static native void		native_setCertificationKey(String strCertificationKey);
 	 
 	 public native float	getRotation();
 	 public native void		setRotation(float degree);

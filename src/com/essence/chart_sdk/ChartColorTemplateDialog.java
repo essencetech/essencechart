@@ -74,7 +74,7 @@ public class ChartColorTemplateDialog extends Dialog implements OnCheckedChangeL
 			return;
 		}
 		
-		if (checkedId >= R.id.chart_color_template_00 && checkedId <= R.id.chart_color_template_32)
+		if (checkedId >= R.id.chart_color_template_00 && checkedId <= R.id.chart_color_template_35)
 		{
 			int	nIndex = checkedId - R.id.chart_color_template_00;
 			int	nTemplateCount = m_Chart.getColorTemplateCount();

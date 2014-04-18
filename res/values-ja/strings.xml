@@ -2,7 +2,7 @@
 <resources>
 
   <string name="app_name">エッセンス　チャート SDK</string>
-    <string name="blogger_url">http://essenceware.blogspot.com</string>
+    <string name="blogger_url">Blogger : http://essenceware.blogspot.com</string>
     <string name="button_visit_blogger">ブログへ</string>
     <string name="button_close">閉じる</string>
     <string name="menu_about">情報</string>
@@ -99,6 +99,9 @@
     <string name="chart_color_template_30">テンプレート-30</string>
     <string name="chart_color_template_31">テンプレート-31</string>
     <string name="chart_color_template_32">テンプレート-32</string> 
+    <string name="chart_color_template_33">テンプレート-33</string>
+    <string name="chart_color_template_34">テンプレート-34(以前のデフォルト)</string>
+    <string name="chart_color_template_35">テンプレート-35</string>
     <string name="chart_title">Title</string>
     <string name="chart_legend">凡例</string>   
     <string name="chart_type">種類</string>
@@ -277,5 +280,6 @@
     <string name="chart_property_series_datapointlabels_fill_edgewidth_3">3 Point</string>
     <string name="chart_property_series_datapointlabels_fill_edgewidth_4">4 Point</string>
     
+    <string name="icon_url">Icon : http://www.visualpharm.com</string>
     
 </resources>

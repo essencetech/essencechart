@@ -1418,7 +1418,7 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 		int	nItemID = item.getItemId();
 		if (nItemID == R.id.menu_about)	{
 			AlertDialog.Builder aboutDialogBuilder = new AlertDialog.Builder(this);
-			aboutDialogBuilder.setMessage(getString(R.string.blogger_url)).setCancelable(
+			aboutDialogBuilder.setMessage(getString(R.string.blogger_url) + "\n" + getString(R.string.icon_url)).setCancelable(
 					false).setPositiveButton(getString(R.string.button_visit_blogger),
 							new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int id) {
@@ -1529,7 +1529,7 @@ public class EssenceChartActivity extends Activity implements View.OnClickListen
 			return;
 		}
 		
-		if (checkedId >= R.id.chart_color_template_00 && checkedId <= R.id.chart_color_template_32)
+		if (checkedId >= R.id.chart_color_template_00 && checkedId <= R.id.chart_color_template_35)
 		{
 			int	nIndex = checkedId - R.id.chart_color_template_00;
 			int	nTemplateCount = m_Chart.getColorTemplateCount();
